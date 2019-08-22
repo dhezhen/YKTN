@@ -155,8 +155,8 @@
 		<label class="control-label" for="form-field-2">Jenis Kelamin</label>
 		<div class="controls">
 			<select name="jenis_kelamin">
-				<option value=""><?php echo $peserta->jenis_kelamin; ?></option>
-				<option value="">Pilih Jenis Kelamin</option>
+				<option><?php echo $peserta->jenis_kelamin; ?></option>
+				<option >Pilih Jenis Kelamin</option>
 				<option value="Laki - Laki"> Laki - Laki </option>
 				<option value="Perempuan">Perempuan </option>
 
@@ -187,7 +187,7 @@
 <div class="control-group">
 		<label class="control-label" for="form-field-2">Alamat</label>
 		<div class="controls">
-			<textarea id="font" placeholder="" name="alamat" maxlength="50" style="margin: 0px; width: 649px; height: 211px;">
+			<textarea id="font" placeholder="" name="alamat" maxlength="100" style="width: 649px; height: 211px;">
 			<?php echo  $peserta->alamat; ?>
 			</textarea>			
 		</div>

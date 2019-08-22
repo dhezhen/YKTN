@@ -45,6 +45,24 @@ class Admin extends CI_Controller
 		$this->template->home('home/content');
 	}
 	
+	function beranda()
+	{
+		$logged_in = $this->session->userdata('logged_in');
+		$level = $this->session->userdata('level');
+		if (!empty($logged_in) && $level=='admin')
+		{
+			$peserta = $this->admin_model->daftarpeserta();
+			$data['jumlah'] = count($peserta);
+			
+			$data['peserta'] = $this->admin_model->daftarpeserta();
+			$this->template->admin('admin/beranda',$data);
+		}
+		else
+		{
+			$this->template->home('home/content');
+		}		
+	}
+
 	function daftarpeserta()
 	{
 		$logged_in = $this->session->userdata('logged_in');

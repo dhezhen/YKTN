@@ -296,6 +296,7 @@ class Ppdb extends CI_Controller
 		}
 	}
 
+
 		
 	function cetak()
 	{
@@ -367,6 +368,26 @@ class Ppdb extends CI_Controller
 			$this->template->ppdb('ppdb/pengumuman',$data);
 		}
 	}
+
+function jadwal() {
+		$logged_in = $this->session->userdata('logged_in');
+		$level = $this->session->userdata('level');
+		$data['informasi'] = $this->ppdb_model->jadwal();
+		if (!empty($logged_in)&&$level =='peserta')
+		{
+
+			$this->template->dashboard_user('ppdb/jadwal',$data);
+		} else {
+
+			$this->template->ppdb('ppdb/jadwal',$data);
+
+	}
+}
+
+
+
+
+
 	
 	function kontak()
 	{
@@ -381,6 +402,12 @@ class Ppdb extends CI_Controller
 			$this->template->ppdb('ppdb/kontak');
 		}
 	}
+
+	
+
+
+
+
 	
 	function proses_kontak()
 	{

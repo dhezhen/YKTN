@@ -3,15 +3,15 @@
 								<table class="table table-striped table-bordered data">
 			<thead>
 				<tr>			
-					<th>NIK</th>
+					<th>No Pendaftaran</th>
 					<th>Nama Lengkap</th>
 					<th>Jenis Kelamin</th>
-					<th>Agama</th>
-					<th>Usia</th>
-					<th>Status</th>
+					<th>Asal Kota</th>
+					<th>No Handphone</th>
+					<th>Nilai Test</th>
 					<th>Keterangan</th>
-					<th>Dokumen</th>
-					<th align="center"><a href="<?php echo site_url('admin/tambahpeserta');?>">Action</a></th>
+					<th>Aksi</th>
+					
 				</tr>
 			</thead>
 			<tbody>
@@ -19,14 +19,14 @@
 				{
 				?>
 				<tr>
-					<td><?php echo $peserta->nik;?></td>
+					<td><?php echo $peserta->id_peserta;?></td>
 					<td><?php echo $peserta->nama_lengkap;?></td>
 					<td><?php echo $peserta->jenis_kelamin;?></td>
-					<td><?php echo $peserta->agama;?></td>
-					<td><?php echo $peserta->usia;?></td>
-					<td><?php echo $peserta->status;?></td>
+					<td><?php echo $peserta->kabupaten."-".$peserta->provinsi;?></td>
+					<td><?php echo $peserta->no_handphone;?></td>
+					<td><?php echo $peserta->nilai_tahsin;?></td>
 					<td><?php echo $peserta->keterangan;?></td>
-					<td><a href="">Download Lampiran</a></td>
+					
 					<td><a href="<?php echo site_url('admin/unverifikasipeserta/'.$peserta->id_peserta);?>">UnVerifikasi</a></td>
 				</tr>
 				<?php

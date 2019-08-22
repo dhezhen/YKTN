@@ -23,6 +23,7 @@ class Ppdb_model extends CI_Model
 	
 	function daftar_peserta($data)
 	{
+
 		$this->db->insert('peserta',$data);
 	}
 	
@@ -55,9 +56,20 @@ class Ppdb_model extends CI_Model
 	{
 		$this->db->select('*');
 		$this->db->from('peserta');
+		/*$this->db->where('angkatan','43 (8 September - 13 Oktober 2019)');*/
+		$this->db->where('status','diverifikasi');
 		$this->db->where('keterangan','LULUS');
-		
+			
 		return $this->db->get()->result();
+	}
+
+	function jadwal()
+	{
+		$this->db->select('*');
+		$this->db->from('jadwal');
+
+		return $this->db->get()->result();
+
 	}
 	
 	function kirim_pesan($data)

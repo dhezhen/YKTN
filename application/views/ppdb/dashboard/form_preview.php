@@ -25,13 +25,35 @@ function printDiv(elementId) {
      }
     }	
 
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
 
+.button:hover {background-color: #3e8e41}
 
-
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
 
 </style>
 <body>
 
+	<center><a href="javascript:printDiv('print-area-1');">
+<button class="button">Print Formulir</button></a>
+<center>
 <div id="print-area-1" class="print-area">
 <table class="table table-striped table-responsive table-bordered" border="0">
  
@@ -296,7 +318,7 @@ keberhasilan program Karantina Tahfizh Nasional yang sedang saya jalani.<br><br>
 
 Kuningan, <?php echo tgl_indo(date("Y-m-d")); ?>
 <br>Ttd Peserta
-<br><br><br><br> 
+<br><br><br>
 <i>materai 6000</i>
 
 <br>
@@ -306,7 +328,6 @@ Kuningan, <?php echo tgl_indo(date("Y-m-d")); ?>
 </td width=1%>
 </tr>
 </table>
-<br>
 <table >
 	<tr>
 	<td>
@@ -315,6 +336,8 @@ Kuningan, <?php echo tgl_indo(date("Y-m-d")); ?>
 
 
 	
+
+</div>
 
 </div>
 

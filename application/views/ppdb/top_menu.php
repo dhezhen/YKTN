@@ -22,7 +22,8 @@
             
             <li role="separator" class="divider"></li>
             <li><a href="<?php echo site_url('ppdb/pengumuman');?>"><span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span> Pengumuman</a></li>
-			<li><a href="#"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Jadwal</a></li>
+
+			<li><a href="<?php echo site_url('ppdb/jadwal'); ?>"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Jadwadl</a></li>
           </ul>
         </li>
         <!--

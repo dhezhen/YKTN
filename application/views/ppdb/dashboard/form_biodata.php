@@ -49,8 +49,6 @@
     <select class="form-control" name="angkatan">
      <option> <?php echo $peserta->angkatan;?> </option>
      <option value="-">-- Pilih angkatan ---</option>
-     <option value="42 (28 Juli - 1 September 2019)">42 (28 Juli - 1 September 2019)</option>
-     <option value="43 (8 September - 13 Oktober 2019)">43 (8 September - 13 Oktober 2019)</option>
      <option value="44 (20 Oktober - 24 November 2019)">44 (20 Oktober - 24 November 2019)</option>
      <option value="45 (1 Desember - 5 Januari 2020)">45 (1 Desember 2019 - 5 Januari 2020)</option>
       </select>
