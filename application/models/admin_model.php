@@ -7,10 +7,13 @@ class Admin_model extends CI_Model
 		parent::__construct();
 	}
 	
-	function daftarpeserta()
+
+function daftarpeserta()
 	{
 		return $this->db->get('peserta')->result();
+		
 	}
+
 	
 	function select_by_id($id_peserta)
 	{

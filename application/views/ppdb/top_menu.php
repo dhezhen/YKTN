@@ -15,18 +15,20 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="<?php echo site_url('ppdb/daftar');?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Pendaftaran</a></li>
+   
+        <!--
         <li><a href="<?php echo site_url('ppdb/daftarpeserta');?>"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Peserta</a></li>
+       
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Informasi <span class="caret"></span></a>
           <ul class="dropdown-menu">
             
             <li role="separator" class="divider"></li>
             <li><a href="<?php echo site_url('ppdb/pengumuman');?>"><span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span> Pengumuman</a></li>
-
-			<li><a href="<?php echo site_url('ppdb/jadwal'); ?>"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Jadwadl</a></li>
+			<li><a href="#"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Jadwal</a></li>
           </ul>
         </li>
-        <!--
+       
 		<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Bantuan <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -47,7 +49,7 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
+<audio src="<?php echo base_url() .'assets/music/opening.wav' ?>" autoplay="autoplay" hidden="hidden"></audio>
 
 
 

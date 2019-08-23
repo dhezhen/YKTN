@@ -105,17 +105,30 @@ class Ppdb extends CI_Controller
 			);
 			
 			$this->session->set_userdata($data_session);
+			$message = "anda berhasil login";
+echo "<script type='text/javascript'>alert('$message');</script>";
 			$this->template->dashboard_user('ppdb/dashboard/home');
 		}
 		else
 		{
+
+
 			$this->template->ppdb('ppdb/content');
 		}
 	}
+
+
 	
 	function logout()
 	{
+
+
 		$this->session->sess_destroy();
+
+$message = "Terimakasih, jangan lupa Tilawah";
+echo "<script type='text/javascript'>alert('$message');</script>";
+		
+
 		$this->template->ppdb('ppdb/content');
 	}
 	

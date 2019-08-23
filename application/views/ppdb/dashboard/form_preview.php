@@ -59,7 +59,7 @@ function printDiv(elementId) {
  
 	<tr border="0">
 		<td colspan="3">
-		<img style="height:100% ;width:100%;" src="<?php echo base_url() .'assets/images/header.png' ?>">		
+		<img style="height:50% ;width:100%;" src="<?php echo base_url() .'assets/images/header.png' ?>">		
 			<H4  align="center">FORMULIR PENDAFTARAN
 			KARANTINA TAHFIZH AL-QURAN NASIONAL <br>ANGKATAN KE <B><?php echo $peserta->angkatan ?><B> </H4></td>
 	</TR>
@@ -215,7 +215,7 @@ Kuningan, <?php echo tgl_indo(date("Y-m-d")); ?>
 <table border="0">
 	<tr>
 	<td>
-<img style="height:100% ;width:100%;" src="<?php echo base_url() .'assets/images/footer.png' ?>">
+<img style="height:50% ;width:100%;" src="<?php echo base_url() .'assets/images/footer.png' ?>">
 </td>
 </tr>
 </table>
@@ -224,7 +224,7 @@ Kuningan, <?php echo tgl_indo(date("Y-m-d")); ?>
 <table>
 	<tr>
 	<td>
-<img style="height:100% ;width:100%;" src="<?php echo base_url() .'assets/images/header.png' ?>">
+<img style="height:50% ;width:100%;" src="<?php echo base_url() .'assets/images/header.png' ?>">
 </td>
 </tr>
 </table>
@@ -277,9 +277,15 @@ Saya yang bertanda tangan dibawah ini :
 <td></td><td></td><td></td>
 </tr>
 <tr>
+	<td width=20%>Angkatan  <br> </td>
+	<td width=1%>:</td>
+	<td width=45%><?php echo $peserta->angkatan; ?></td>
+</tr>
+
+<tr>
 	<td width=20%>Program  <br> </td>
 	<td width=1%>:</td>
-	<td width=45%><?php echo $peserta->angkatan ?></td>
+	<td width=45%><?php echo $peserta->program ?></td>
 </tr>
 
 <tr>
@@ -331,10 +337,13 @@ Kuningan, <?php echo tgl_indo(date("Y-m-d")); ?>
 <table >
 	<tr>
 	<td>
-<img style="height:100% ;width:100%;" src="<?php echo base_url() .'assets/images/footer.png' ?>">
+<img style="height:50% ;width:100%;" src="<?php echo base_url() .'assets/images/footer.png' ?>">
 </td>
 
-
+<br>
+<br>
+<br>
+<br>
 	
 
 </div>

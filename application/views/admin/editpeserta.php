@@ -61,10 +61,10 @@
 			<select class="font" name="angkatan">
      <option> <?php echo $peserta->angkatan;?> </option>
      <option value="-">-- Pilih angkatan ---</option>
-     <option value="42 (28 Juli - 1 September 2019)">42 (28 Juli - 1 September 2019)</option>
-     <option value="43 (8 September - 13 Oktober 2019)">43 (8 September - 13 Oktober 2019)</option>
-     <option value="44 (20 Oktober - 24 November 2019)">44 (20 Oktober - 24 November 2019)</option>
-     <option value="45 (1 Desember - 5 Januari 2020)">45 (1 Desember 2019 - 5 Januari 2020)</option>
+
+     <option value="43">43 (8 September - 13 Oktober 2019)</option>
+     <option value="44">44 (20 Oktober - 24 November 2019)</option>
+     <option value="45">45 (1 Desember 2019 - 5 Januari 2020)</option>
       </select>	
 		</div>
 </div>
@@ -74,30 +74,43 @@
 		<div class="controls">
 			<select class="form-control" name="program">
      <option> <?php echo $peserta->program;?> </option>
-     <option value="-">-- Pilih Program---</option>
      <option value="3 Bulan Mutqin">3 Bulan Mutqin</option>
      <option value="1 Bulan 30 Juz"> 1 Bulan 30 Juz</option>
      <option value="3 Pekan 15 Juz">3 Pekan 15 Juz </option>
      <option value="2 Pekan 10 Juz">2 Pekan 10 Juz</option>
-     <option value="Sabtu - Ahad 1 Juz">Sabtu - Ahad 1 Juz</option>
-     <option value="Sabtu - Ahad Tahsin Tuntas">Sabtu - Ahad Tahsin Tuntas</option>
+     <option value="1 Pekan 5 Juz">1 Pekan 5 Juz</option>
+     <option value="weekend 1 Juz">Weekend 1 Juz</option>
+     <option value="weekend Tahsin Tuntas">weekend Tahsin Tuntas</option>
     
       </select>
 </div>	
 </div>	
 
 
-	<div class="control-group">
+	
+
+		<div class="control-group">
 		
 		<label class="control-label" for="form-field-2">Email</label>
 			<div class="controls">
-				<input type="text" readonly id="font"  placeholder="" name="email" value="<?php echo $peserta->email;?>" />			
+				<input type="text"  id="font"  placeholder="" name="email" value="<?php echo $peserta->email;?>" />			
 			</div>
-
-
 	</div>	
 
-	
+	<div class="control-group">
+		
+		<label class="control-label" for="form-field2">Usename</label>
+			<div class="controls">
+				<input type="text"  id="font"  placeholder="" name="email" value="<?php echo $peserta->username;?>" />			
+			</div>
+	</div>	
+	<div class="control-group">
+		
+		<label class="control-label" for="form-field2">Password</label>
+			<div class="controls">
+				<input type="text"  id="font"  placeholder="" name="Password" value="<?php echo $peserta->password;?>" />			
+			</div>
+	</div>	
 	
 	<div class="control-group">
 		<label class="control-label" for="form-field-2">No HP</label>

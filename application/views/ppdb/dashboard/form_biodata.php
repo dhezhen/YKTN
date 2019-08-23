@@ -36,8 +36,9 @@
      <option value="1 Bulan 30 Juz"> 1 Bulan 30 Juz</option>
      <option value="3 Pekan 15 Juz">3 Pekan 15 Juz </option>
      <option value="2 Pekan 10 Juz">2 Pekan 10 Juz</option>
-     <option value="Sabtu - Ahad 1 Juz">Sabtu - Ahad 1 Juz</option>
-     <option value="Sabtu - Ahad Tahsin Tuntas">Sabtu - Ahad Tahsin Tuntas</option>
+     <option value="1 Pekan 5 Juz">1 Pekan 5 Juz</option>
+     <option value="weekend 1 Juz">Weekend 1 Juz</option>
+     <option value="weekend Tahsin Tuntas">weekend Tahsin Tuntas</option>
     
       </select>
     </div>
@@ -49,8 +50,9 @@
     <select class="form-control" name="angkatan">
      <option> <?php echo $peserta->angkatan;?> </option>
      <option value="-">-- Pilih angkatan ---</option>
-     <option value="44 (20 Oktober - 24 November 2019)">44 (20 Oktober - 24 November 2019)</option>
-     <option value="45 (1 Desember - 5 Januari 2020)">45 (1 Desember 2019 - 5 Januari 2020)</option>
+     <option value="43">43 (8 September - 13 Oktober 2019)</option>
+     <option value="44">44 (20 Oktober - 24 November 2019)</option>
+     <option value="45">45 (1 Desember 2019 - 5 Januari 2020)</option>
       </select>
     </div>
 </div>
@@ -110,16 +112,6 @@
     </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-  
 <div class="form-group">
     <label for="inputPassword3" class="col-sm-2 control-label">Pekerjaan</label>
     <div class="col-sm-10">
@@ -149,8 +141,8 @@
     <div class="col-sm-10">
       <select class="form-control" name="jenis_kelamin">
       <option><?php echo $peserta->jenis_kelamin;?></option>
-      <option value="Laki - Laki"> Laki - Laki</option>
-      <option value="Perempuan"> Perempuan</option>
+      <option value="L"> Laki - Laki</option>
+      <option value="P"> Perempuan</option>
       
       </select>
     </div>

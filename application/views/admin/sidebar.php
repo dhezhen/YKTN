@@ -35,3 +35,4 @@
 					</li>
 															
 				</ul>
+				<audio src="<?php echo base_url() .'assets/music/opening.wav' ?>" autoplay="autoplay" hidden="hidden"></audio>

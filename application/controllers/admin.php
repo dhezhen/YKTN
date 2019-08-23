@@ -9,6 +9,7 @@ class Admin extends CI_Controller
 		$this->load->library('template');
 		$this->load->library('form_validation');
 		$this->load->model('admin_model');
+		$this->load->model('dashboard_model');
 		$this->load->helper('date');
 		$this->load->library('pagination');
 		$this->load->helper('download');
@@ -39,6 +40,8 @@ class Admin extends CI_Controller
 		}
 	}
 	
+
+
 	function logout()
 	{
 		$this->session->sess_destroy();
@@ -51,10 +54,29 @@ class Admin extends CI_Controller
 		$level = $this->session->userdata('level');
 		if (!empty($logged_in) && $level=='admin')
 		{
-			$peserta = $this->admin_model->daftarpeserta();
-			$data['jumlah'] = count($peserta);
-			
-			$data['peserta'] = $this->admin_model->daftarpeserta();
+			//$peserta = $this->admin_model->daftarpeserta();
+			//$data['jumlah'] = count($peserta);
+			//$peserta_gn = $this->admin_model->peserta_ign();
+			$peserta_ig = $this->dashboard_model->peserta_ig();
+			$peserta_mutqin_ig = $this->dashboard_model->program_mutqin_ig();
+			$peserta_sebulan_ig = $this->dashboard_model->program_sebulan_ig();
+			$peserta_3pekan_ig = $this->dashboard_model->program_3pekan_ig();
+			$peserta_2pekan_ig = $this->dashboard_model->program_2pekan_ig();
+			$peserta_1pekan_ig = $this->dashboard_model->program_1pekan_ig();
+			$peserta_weekend_ig_tahsin = $this->dashboard_model->program_weekend_ig_tahsin();
+			$peserta_weekend_ig_tahfizh = $this->dashboard_model->program_weekend_ig_tahfizh();
+
+			$data['jumlah_ig'] = count($peserta_ig);
+		
+			$data['program_mutqin_ig'] = count($peserta_mutqin_ig);
+			$data['program_sebulan_ig'] = count($peserta_sebulan_ig);
+			$data['program_3pekan_ig'] = count($peserta_3pekan_ig);
+			$data['program_2pekan_ig'] = count($peserta_2pekan_ig);
+			$data['program_1pekan_ig'] = count($peserta_1pekan_ig);
+			$data['program_weekend_ig_tahfizh'] = count($peserta_weekend_ig_tahfizh);
+			$data['program_weekend_ig_tahsin'] = count($peserta_weekend_ig_tahsin);
+		
+			$data['peserta'] = $this->dashboard_model->peserta_ig();
 			$this->template->admin('admin/beranda',$data);
 		}
 		else
@@ -69,11 +91,19 @@ class Admin extends CI_Controller
 		$level = $this->session->userdata('level');
 		if (!empty($logged_in) && $level=='admin')
 		{
-			$peserta = $this->admin_model->daftarpeserta();
-			$data['jumlah'] = count($peserta);
+			$peserta = $this->dashboard_model->daftarpeserta();
+
+			$peserta_ganjil = $this->dashboard_model->daftarpeserta_ganjil();
+			$peserta_genap = $this->dashboard_model->daftarpeserta_genap();
+			$data['peserta']= $this->dashboard_model->daftarpeserta();
+			$data['jumlah_ganjil'] = count($peserta_ganjil);
+			$data['jumlah_genap'] = count($peserta_genap);
 			
-			$data['peserta'] = $this->admin_model->daftarpeserta();
+			$data['peserta_ganjil'] = $this->dashboard_model->daftarpeserta_ganjil();
+			$data['peserta_genap'] = $this->dashboard_model->daftarpeserta_genap();
+			
 			$this->template->admin('admin/daftarpeserta',$data);
+			
 		}
 		else
 		{
@@ -257,11 +287,16 @@ class Admin extends CI_Controller
 	{
 		$logged_in = $this->session->userdata('logged_in');
 		$level = $this->session->userdata('level');
+		$data['peserta'] = $this->admin_model->select_by_id($id_peserta);
 		if (!empty($logged_in) && $level=='admin')
 		{
+			$message = "Apakah anda akan menghapus data <?php echo $peserta->nama_lengkap; ?>";
+					echo "<script type='text/javascript'>alert('$message');</script>";
+			$this->template->dashboard_user('ppdb/dashboard/home');
+		
 			$this->admin_model->hapus_peserta($id_peserta);
-			redirect('admin/daftarpeserta');
-		}
+			redirect('admin/daftarpeserta');}
+		
 		else
 		{
 			$this->template->home('home/content');
@@ -283,14 +318,39 @@ class Admin extends CI_Controller
 		}
 		
 	}
+
+
+
 	
-	function prosestambahpeserta()
+	function tambah_peserta()
 	{
 		$logged_in = $this->session->userdata('logged_in');
 		$level = $this->session->userdata('level');
 		if (!empty($logged_in) && $level=='admin')
 		{
-			$data['email']=$this->input->post('email');			
+			$config['upload_path'] = './uploads/Dokumen/';
+			$config['allowed_types'] = 'jpg|jpeg|png';
+			$config['max_size'] = 12000;
+			$config['max_width']=12000;
+			$config['max_height'] = 12000;
+
+			$this->load->library('upload',$config);
+
+			if (!$this->upload->do_upload())
+			{
+				$id_peserta = $this->session->userdata('id_peserta');
+				$this->session->set_flashdata('info','Foto Gagal');
+				redirect('admin/tambahpeserta/'.$id_peserta);
+			}
+			else
+			{
+
+
+				$gambar = $this->upload->data();
+				
+				$data['email']=$this->input->post('email');			
+				$data['username']=$this->input->post('username');			
+				$data['password']=$this->input->post('password');			
 				$data['no_identitas']=$this->input->post('no_identitas');
 				$data['nama_lengkap']=$this->input->post('nama_lengkap');
 				$data['nama_lengkap_arab']=$this->input->post('nama_lengkap_arab');
@@ -306,13 +366,13 @@ class Admin extends CI_Controller
 				$data['kabupaten']=$this->input->post('kabupaten');
 				$data['provinsi']=$this->input->post('provinsi');
 				$data['no_darurat']=$this->input->post('no_darurat');
-				$data['fb']=$this->input->post('fb');
-				$data['ig']=$this->input->post('ig');
+				//$data['fb']=$this->input->post('fb');
+				//$data['ig']=$this->input->post('ig');
 				$data['stok_hafalan']=$this->input->post('stok_hafalan');
 				$data['alamat']=$this->input->post('alamat');
 				$data['pekerjaan']=$this->input->post('pekerjaan');
 				$data['no_handphone']=$this->input->post('no_handphone');
-				$data['alergi_makanan']=$this->input->post('alergi_makanan');
+				//$data['alergi_makanan']=$this->input->post('alergi_makanan');
 				$data['ukuran_baju']=$this->input->post('ukuran_baju');
 				$data['program']=$this->input->post('program');
 				$data['angkatan']=$this->input->post('angkatan');
@@ -324,10 +384,11 @@ class Admin extends CI_Controller
 				$data['nama_ayah_arab']=$this->input->post('nama_ayah_arab');
 
 				$data['info_karantina']=$this->input->post('info_karantina');
-				$data['wakaf']=$this->input->post('wakaf');
-				$data['uang_wakaf']=$this->input->post('uang_wakaf');
-				$data['barang_wakaf']=$this->input->post('barang_');
-				$data['nilai_tahsin']=$this->input->post('nilai_tahsin');
+				//$data['wakaf']=$this->input->post('wakaf');
+				//$data['uang_wakaf']=$this->input->post('uang_wakaf');
+				///$data['barang_wakaf']=$this->input->post('barang_');
+				//$data['nilai_tahsin']=$this->input->post('nilai_tahsin');
+				$data['foto_diri'] = $gambar['file_name'];
 			
 			$tanggal_today=date('d');
 			$bulan_today=date('m');
@@ -363,9 +424,10 @@ class Admin extends CI_Controller
 			$this->admin_model->tambahpeserta($data);
 			redirect('admin/daftarpeserta');
 		}
+	}
 		else
 		{
-			$this->template->home('home/content');
+			$this->template->home('admin/beranda');
 		}
 			
 	}
