@@ -32,7 +32,8 @@ class Admin extends CI_Controller
 			);
 			
 			$this->session->set_userdata($data);
-			$this->template->admin('admin/beranda');
+			redirect('admin/beranda');
+			//$this->template->admin('admin/beranda');
 		}
 		else
 		{
@@ -54,7 +55,9 @@ class Admin extends CI_Controller
 		$level = $this->session->userdata('level');
 		if (!empty($logged_in) && $level=='admin')
 		{
-			//$peserta = $this->admin_model->daftarpeserta();
+
+			//ikhwan ganjil
+			$peserta = $this->admin_model->daftarpeserta();
 			//$data['jumlah'] = count($peserta);
 			//$peserta_gn = $this->admin_model->peserta_ign();
 			$peserta_ig = $this->dashboard_model->peserta_ig();
@@ -66,8 +69,9 @@ class Admin extends CI_Controller
 			$peserta_weekend_ig_tahsin = $this->dashboard_model->program_weekend_ig_tahsin();
 			$peserta_weekend_ig_tahfizh = $this->dashboard_model->program_weekend_ig_tahfizh();
 
+
+			//jumlah peserta ikhwan gankil 
 			$data['jumlah_ig'] = count($peserta_ig);
-		
 			$data['program_mutqin_ig'] = count($peserta_mutqin_ig);
 			$data['program_sebulan_ig'] = count($peserta_sebulan_ig);
 			$data['program_3pekan_ig'] = count($peserta_3pekan_ig);
@@ -75,6 +79,36 @@ class Admin extends CI_Controller
 			$data['program_1pekan_ig'] = count($peserta_1pekan_ig);
 			$data['program_weekend_ig_tahfizh'] = count($peserta_weekend_ig_tahfizh);
 			$data['program_weekend_ig_tahsin'] = count($peserta_weekend_ig_tahsin);
+
+
+
+			//akhwat ganjjil 
+			$peserta_ag = $this->dashboard_model->peserta_ag();
+			$peserta_mutqin_ag = $this->dashboard_model->program_mutqin_ag();
+			$peserta_sebulan_ag = $this->dashboard_model->program_sebulan_ag();
+			$peserta_3pekan_ag = $this->dashboard_model->program_3pekan_ag();
+			$peserta_2pekan_ag = $this->dashboard_model->program_2pekan_ag();
+			$peserta_1pekan_ag = $this->dashboard_model->program_1pekan_ag();
+			$peserta_weekend_ag_tahsin = $this->dashboard_model->program_weekend_ag_tahsin();
+			$peserta_weekend_ag_tahfizh = $this->dashboard_model->program_weekend_ag_tahfizh();
+
+
+			//jumlah peserta akwaht ganjil
+			$data['jumlah_ag'] = count($peserta_ag);
+			$data['program_mutqin_ag'] = count($peserta_mutqin_ag);
+			$data['program_sebulan_ag'] = count($peserta_sebulan_ag);
+			$data['program_3pekan_ag'] = count($peserta_3pekan_ag);
+			$data['program_2pekan_ag'] = count($peserta_2pekan_ag);
+			$data['program_1pekan_ag'] = count($peserta_1pekan_ag);
+			$data['program_weekend_ag_tahfizh'] = count($peserta_weekend_ag_tahfizh);
+			$data['program_weekend_ag_tahsin'] = count($peserta_weekend_ag_tahsin);
+			
+
+
+
+
+
+
 		
 			$data['peserta'] = $this->dashboard_model->peserta_ig();
 			$this->template->admin('admin/beranda',$data);
