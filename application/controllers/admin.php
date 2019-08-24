@@ -56,10 +56,13 @@ class Admin extends CI_Controller
 		if (!empty($logged_in) && $level=='admin')
 		{
 
-			//ikhwan ganjil
+			//total data peserta yang masuk
 			$peserta = $this->admin_model->daftarpeserta();
 			//$data['jumlah'] = count($peserta);
 			//$peserta_gn = $this->admin_model->peserta_ign();
+
+			//Peserta ganjill=======|| ganjil (g) || genap = (gnp)
+			$peserta_ganjil = $this->dashboard_model->daftarpeserta_ganjil();
 			$peserta_ig = $this->dashboard_model->peserta_ig();
 			$peserta_mutqin_ig = $this->dashboard_model->program_mutqin_ig();
 			$peserta_sebulan_ig = $this->dashboard_model->program_sebulan_ig();
@@ -69,8 +72,9 @@ class Admin extends CI_Controller
 			$peserta_weekend_ig_tahsin = $this->dashboard_model->program_weekend_ig_tahsin();
 			$peserta_weekend_ig_tahfizh = $this->dashboard_model->program_weekend_ig_tahfizh();
 
-
-			//jumlah peserta ikhwan gankil 
+			http://[::1]/acs/access/card
+			//jumlah peserta ikhwan ganjil
+			$data['peserta_ganjil'] = count($peserta_ganjil);
 			$data['jumlah_ig'] = count($peserta_ig);
 			$data['program_mutqin_ig'] = count($peserta_mutqin_ig);
 			$data['program_sebulan_ig'] = count($peserta_sebulan_ig);
@@ -103,13 +107,64 @@ class Admin extends CI_Controller
 			$data['program_weekend_ag_tahfizh'] = count($peserta_weekend_ag_tahfizh);
 			$data['program_weekend_ag_tahsin'] = count($peserta_weekend_ag_tahsin);
 			
+			//batas perhitungan peserta ganjil===============================
+
+			//Peserta genap==================================================
+			$peserta_genap = $this->dashboard_model->daftarpeserta_genap();
+			$peserta_ignp = $this->dashboard_model->peserta_ignp();
+			$peserta_mutqin_ignp = $this->dashboard_model->program_mutqin_ignp();
+			$peserta_sebulan_ignp = $this->dashboard_model->program_sebulan_ignp();
+			$peserta_3pekan_ignp = $this->dashboard_model->program_3pekan_ignp();
+			$peserta_2pekan_ignp = $this->dashboard_model->program_2pekan_ignp();
+			$peserta_1pekan_ignp = $this->dashboard_model->program_1pekan_ignp();
+			$peserta_weekend_ignp_tahsin = $this->dashboard_model->program_weekend_ignp_tahsin();
+			$peserta_weekend_ignp_tahfizh = $this->dashboard_model->program_weekend_ignp_tahfizh();
+
+
+			//jumlah peserta ikhwan ganjil
+			$data['peserta_genap'] = count($peserta_genap);
+			$data['jumlah_ignp'] = count($peserta_ignp);
+			$data['program_mutqin_ignp'] = count($peserta_mutqin_ignp);
+			$data['program_sebulan_ignp'] = count($peserta_sebulan_ignp);
+			$data['program_3pekan_ignp'] = count($peserta_3pekan_ignp);
+			$data['program_2pekan_ignp'] = count($peserta_2pekan_ignp);
+			$data['program_1pekan_ignp'] = count($peserta_1pekan_ignp);
+			$data['program_weekend_ignp_tahfizh'] = count($peserta_weekend_ignp_tahfizh);
+			$data['program_weekend_ignp_tahsin'] = count($peserta_weekend_ignp_tahsin);
+
+
+
+			//akhwat ganjjil 
+			$peserta_agnp = $this->dashboard_model->peserta_agnp();
+			$peserta_mutqin_agnp = $this->dashboard_model->program_mutqin_agnp();
+			$peserta_sebulan_agnp = $this->dashboard_model->program_sebulan_agnp();
+			$peserta_3pekan_agnp = $this->dashboard_model->program_3pekan_agnp();
+			$peserta_2pekan_agnp = $this->dashboard_model->program_2pekan_agnp();
+			$peserta_1pekan_agnp = $this->dashboard_model->program_1pekan_agnp();
+			$peserta_weekend_agnp_tahsin = $this->dashboard_model->program_weekend_agnp_tahsin();
+			$peserta_weekend_agnp_tahfizh = $this->dashboard_model->program_weekend_agnp_tahfizh();
+
+
+			//jumlah peserta akwaht genap
+			$data['jumlah_agnp'] = count($peserta_agnp);
+			$data['program_mutqin_agnp'] = count($peserta_mutqin_agnp);
+			$data['program_sebulan_agnp'] = count($peserta_sebulan_agnp);
+			$data['program_3pekan_agnp'] = count($peserta_3pekan_agnp);
+			$data['program_2pekan_agnp'] = count($peserta_2pekan_agnp);
+			$data['program_1pekan_agnp'] = count($peserta_1pekan_agnp);
+			$data['program_weekend_agnp_tahfizh'] = count($peserta_weekend_agnp_tahfizh);
+			$data['program_weekend_agnp_tahsin'] = count($peserta_weekend_agnp_tahsin);
+
+
+			//batas Peserta genap==================================================
 
 
 
 
 
 
-		
+
+		//============================================================//
 			$data['peserta'] = $this->dashboard_model->peserta_ig();
 			$this->template->admin('admin/beranda',$data);
 		}
