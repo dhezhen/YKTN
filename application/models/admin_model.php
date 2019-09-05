@@ -43,7 +43,9 @@ function daftarpeserta()
 	{
 		$this->db->select('*');
 		$this->db->from('peserta');
+		;
 		$this->db->where('status','belum diverifikasi');
+		
 		
 		return $this->db->get()->result();
 	}
@@ -52,7 +54,9 @@ function daftarpeserta()
 	{
 		$this->db->select('*');
 		$this->db->from('peserta');
+		$this->db->order_by('jenis_kelamin asc, nama_lengkap asc, nilai_tahsin desc');
 		$this->db->where('status','diverifikasi');
+		$this->db->where('angkatan','43');
 		
 		return $this->db->get()->result();
 	}

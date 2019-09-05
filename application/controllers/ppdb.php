@@ -218,29 +218,14 @@ echo "<script type='text/javascript'>alert('$message');</script>";
 				$data['foto_identitas'] = $gambar2['file_name'];
 				$data['foto_suket'] = $gambar3['file_name'];
 				
-				$tanggal_lahir=$this->input->post('tanggal_lahir');
-				$bulan_lahir=$this->input->post('bulan_sekolah');
-				$tahun_lahir=$this->input->post('tahun_sekolah');
-				
-				$tanggal_today=date('d');
-				$bulan_today=date('m');
-				$tahun_today=date('Y');
-				
-				$harilahir=gregoriantojd($data['bulan_lahir'],$data['tanggal_lahir'],$data['tahun_lahir']);
-				$hariini=gregoriantojd($bulan_today,$tanggal_today,$tahun_today);
-				
-				$umur=$hariini-$harilahir; //menghitung selisih hari
-				$tahun=$umur/365; //menghitung usia tahun
-				$sisa=$umur%365; //sisa pembagian dari tahun untuk menghitung bulan
-				$bulan=$sisa/30; //menghitung usia bulan
-				$hari=$sisa%30; //menghitung sisa hari
-				
-				$data['usia']=floor($tahun)." tahun ".floor($bulan)." bulan ".floor($hari)." hari";
-				
-				if (($tahun > 5) && ($bulan >= 6))
-				{
-					$data['keterangan'] = 'LULUS';
-				}
+			$birthday = $this->input->post('tanggal_lahir');
+						
+						// Convert Ke Date Time
+						$biday = new DateTime($birthday);
+						$today = new DateTime();
+						$diff = $today->diff($biday);		
+			
+			$data['usia']=$diff->y;
 				
 				$id_peserta=$this->input->post('id_peserta');
 				

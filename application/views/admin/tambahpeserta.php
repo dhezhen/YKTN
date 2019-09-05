@@ -187,19 +187,12 @@
 </div>
 
 
-<div class="control-group">
-		<label class="control-label" for="form-field-2">Tempat Lahir</label>
-		<div class="controls">
-			<input type="text" id="font"   name="tempat_lahir"  />						
-		</div>
-	</div>
 
 <div class="control-group">
-		<label class="control-label" for="form-field-2">Tanggal Lahir</label>
+		<label class="control-label" for="form-field-2">Tempat, Tanggal Lahir</label>
 		<div class="controls">
-<input type="number" id="font" placeholder="tanggal lahir XX" max="31"  min="1" maxlength="2" name="tanggal_lahir"  />
-<input type="number" max="12"  min="1" maxlength="2" id="font" placeholder="bulan lahir XX"  name="bulan_lahir"  />
-<input type="number" id="font" max="2017"  min="1800" maxlength="4" placeholder="Tahun  lahir XXXX"  name="tahun_lahir"  />
+<input type="text" id="font" placeholder="Tempat Lahir"   name="tempat_lahir"  />
+<input type="date"  placeholder="Tanggal Lahir"  name="tanggal"  />
 
 
 		</div>
@@ -326,7 +319,7 @@
   
 
 <div class="control-group">
-		<label class="control-label" for="form-field-2">Info Karantina Dari Mana</label>
+		<label class="control-label" for="form-field-2">Foto Diri</label>
 		<div class="controls">
 			<input type="file"   name="userfile"  />												
 		</div>

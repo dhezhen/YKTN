@@ -148,26 +148,19 @@
     </div>
   </div>
     
-  <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label">Tempat Lahir</label>
-    <div class="col-sm-6">
-      <input type="text" class="form-control" id="inputPassword3" placeholder="Mis: Bekasi" name="tempat_lahir" value="<?php echo $peserta->tempat_lahir;?>">
-    </div>
-  
-  </div>
+
   
   <div class="form-group">
-    <label for="inputEmail3" class="col-sm-2 control-label">Tanggal Lahir</label>
+    <label for="inputEmail3" class="col-sm-2 control-label">Tempat, Tgl Lahir</label>
     <div class="col-sm-10">
     <div class="col-sm-4">
-      <input type="text" class="form-control" id="inputEmail3" name="tanggal_lahir" value="<?php echo $peserta->tanggal_lahir;?>" placeholder="Tanggal Lahir(xx)">
+      <input type="text" class="form-control" id="inputEmail3" name="tempat_lahir" value="<?php echo $peserta->tempat_lahir;?>" placeholder="Tanggal Lahir(xx)">
     </div>
     <div class="col-sm-4">
-      <input type="text" class="form-control" id="inputEmail3" name="bulan_lahir" value="<?php echo $peserta->bulan_lahir;?>" placeholder="Bulan Lahir(xx)">
+      <input type="date" class="form-control" name="tanggal_lahir" value="" placeholder="Tanggal Lahir">
     </div>
-    <div class="col-sm-4">
-      <input type="text" class="form-control" id="inputEmail3" name="tahun_lahir" value="<?php echo $peserta->tahun_lahir;?>" placeholder="Tahun lahir(xxxx)">
-    </div>
+   
+
     </div>
   </div>
 

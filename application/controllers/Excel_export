@@ -1,0 +1,14 @@
+<?php 
+
+defined ('BASEPATH') OR Exit ('No Direct script acces allowed');
+
+
+// Load library phpspreadsheet
+require('./excel/vendor/autoload.php');
+
+use PhpOffice\PhpSpreadsheet\Helper\Sample;
+use PhpOffice\PhpSpreadsheet\IOFactory;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+
+
+?>

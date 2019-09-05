@@ -280,8 +280,7 @@ class Admin extends CI_Controller
 				$data['nama_panggilan']=$this->input->post('nama_panggilan');
 				$data['jenis_kelamin']=$this->input->post('jenis_kelamin');
 				$data['tanggal_lahir']=$this->input->post('tanggal_lahir');
-				$data['bulan_lahir']=$this->input->post('bulan_lahir');
-				$data['tahun_lahir']=$this->input->post('tahun_lahir');
+				
 				$data['tempat_lahir']=$this->input->post('tempat_lahir');
 				$data['status_peserta']=$this->input->post('status_peserta');
 				$data['kewarganegaraan']=$this->input->post('kewarganegaraan');
@@ -314,40 +313,15 @@ class Admin extends CI_Controller
 				
 				
 				
-				$tanggal_lahir=$this->input->post('tanggal_lahir');
-				$bulan_lahir=$this->input->post('bulan_sekolah');
-				$tahun_lahir=$this->input->post('tahun_sekolah');
+				$birthday = $this->input->post('tanggal_lahir');
+						
+						// Convert Ke Date Time
+						$biday = new DateTime($birthday);
+						$today = new DateTime();
+						$diff = $today->diff($biday);		
 			
-			$tanggal_today=date('d');
-			$bulan_today=date('m');
-			$tahun_today=date('Y');
+			$data['usia']=$diff->y;
 			
-			$harilahir=gregoriantojd($data['bulan_lahir'],$data['tanggal_lahir'],$data['tahun_lahir']);
-			$hariini=gregoriantojd($bulan_today,$tanggal_today,$tahun_today);
-			
-			$umur=$hariini-$harilahir; //menghitung selisih hari
-			$tahun=$umur/365; //menghitung usia tahun
-			$sisa=$umur%365; //sisa pembagian dari tahun untuk menghitung bulan
-			$bulan=$sisa/30; //menghitung usia bulan
-			$hari=$sisa%30; //menghitung sisa hari
-			
-			$data['usia']=floor($tahun)." tahun ".floor($bulan)." bulan ".floor($hari)." hari";
-			
-			if ((floor($tahun) <= 5))
-			{
-				if (floor($bulan) < 7)
-				{
-					$data['keterangan'] = 'TIDAK LULUS';
-				}
-				else
-				{
-					$data['keterangan'] = 'LULUS';
-				}
-			}
-			else
-			{
-				$data['keterangan'] = 'LULUS';
-			}
 			
 			$id_peserta=$this->input->post('id_peserta');
 			
@@ -446,8 +420,6 @@ class Admin extends CI_Controller
 				$data['nama_panggilan']=$this->input->post('nama_panggilan');
 				$data['jenis_kelamin']=$this->input->post('jenis_kelamin');
 				$data['tanggal_lahir']=$this->input->post('tanggal_lahir');
-				$data['bulan_lahir']=$this->input->post('bulan_lahir');
-				$data['tahun_lahir']=$this->input->post('tahun_lahir');
 				$data['tempat_lahir']=$this->input->post('tempat_lahir');
 				$data['status_peserta']=$this->input->post('status_peserta');
 				$data['kewarganegaraan']=$this->input->post('kewarganegaraan');
@@ -479,36 +451,16 @@ class Admin extends CI_Controller
 				//$data['nilai_tahsin']=$this->input->post('nilai_tahsin');
 				$data['foto_diri'] = $gambar['file_name'];
 			
-			$tanggal_today=date('d');
-			$bulan_today=date('m');
-			$tahun_today=date('Y');
+						$birthday = $this->input->post('tanggal_lahir');
+						
+						// Convert Ke Date Time
+						$biday = new DateTime($birthday);
+						$today = new DateTime();
+						$diff = $today->diff($biday);		
 			
-			$harilahir=gregoriantojd($data['bulan_lahir'],$data['tanggal_lahir'],$data['tahun_lahir']);
-			$hariini=gregoriantojd($bulan_today,$tanggal_today,$tahun_today);
+			$data['usia']=$diff->y;
 			
-			$umur=$hariini-$harilahir; //menghitung selisih hari
-			$tahun=$umur/365; //menghitung usia tahun
-			$sisa=$umur%365; //sisa pembagian dari tahun untuk menghitung bulan
-			$bulan=$sisa/30; //menghitung usia bulan
-			$hari=$sisa%30; //menghitung sisa hari
 			
-			$data['usia']=floor($tahun)." tahun ".floor($bulan)." bulan ".floor($hari)." hari";
-			
-			if ((floor($tahun) <= 5))
-			{
-				if (floor($bulan) < 7)
-				{
-					$data['keterangan'] = 'TIDAK LULUS';
-				}
-				else
-				{
-					$data['keterangan'] = 'LULUS';
-				}
-			}
-			else
-			{
-				$data['keterangan'] = 'LULUS';
-			}
 			
 			$this->admin_model->tambahpeserta($data);
 			redirect('admin/daftarpeserta');

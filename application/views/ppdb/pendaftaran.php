@@ -40,14 +40,14 @@
   <div class="form-group">
     <label for="inputPassword3" class="col-sm-2 control-label">Nama Lengkap</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" name="nama_lengkap" value="<?php echo set_value('nama_lengkap')?>" id="inputPassword3" placeholder="Password">
+      <input type="text" class="form-control" name="nama_lengkap" value="<?php echo set_value('nama_lengkap')?>" id="inputPassword3" placeholder="Nama Lengkap">
     </div>
   </div>
   
   <div class="form-group">
     <label for="inputPassword3" class="col-sm-2 control-label">Nama Panggilan</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" name="nama_panggilan" value="<?php echo set_value('nama_panggilan')?>" id="inputPassword3" placeholder="Password">
+      <input type="text" class="form-control" name="nama_panggilan" value="<?php echo set_value('nama_panggilan')?>" id="inputPassword3" placeholder="Nama Panggilan">
     </div>
   </div>
    
