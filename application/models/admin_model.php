@@ -38,6 +38,21 @@ function daftarpeserta()
 	{
 		$this->db->insert('peserta',$data);
 	}
+
+	function updatePengumuman ($id,$data)
+	{
+		$this->db->where('id',$id);
+		$this->db->update('pengumuman',$data);	
+	}
+
+	function isiPengumuman(){
+		$this->db->select('*');
+		$this->db->from('pengumuman');
+		$this->db->where('id','2');
+
+		return $this->db->get()->result();
+
+	}
 	
 	function pesertabelumdiverifikasi()
 	{
@@ -45,6 +60,7 @@ function daftarpeserta()
 		$this->db->from('peserta');
 		;
 		$this->db->where('status','belum diverifikasi');
+		$this->db->where('angkatan','44');
 		
 		
 		return $this->db->get()->result();
@@ -56,7 +72,7 @@ function daftarpeserta()
 		$this->db->from('peserta');
 		$this->db->order_by('jenis_kelamin asc, nama_lengkap asc, nilai_tahsin desc');
 		$this->db->where('status','diverifikasi');
-		$this->db->where('angkatan','43');
+		$this->db->where('angkatan','44');
 		
 		return $this->db->get()->result();
 	}

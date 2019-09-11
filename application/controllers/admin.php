@@ -32,7 +32,9 @@ class Admin extends CI_Controller
 			);
 			
 			$this->session->set_userdata($data);
+		$this->session->set_flashdata('succes', "anda berhasil Login");
 			redirect('admin/beranda');
+
 			//$this->template->admin('admin/beranda');
 		}
 		else
@@ -61,7 +63,10 @@ class Admin extends CI_Controller
 			//$data['jumlah'] = count($peserta);
 			//$peserta_gn = $this->admin_model->peserta_ign();
 
-			//Peserta ganjill=======|| ganjil (g) || genap = (gnp)
+		
+			$peserta = $this->dashboard_model->daftarpeserta();
+
+				//Peserta ganjill=======|| ganjil (g) || genap = (gnp)
 			$peserta_ganjil = $this->dashboard_model->daftarpeserta_ganjil();
 			$peserta_ig = $this->dashboard_model->peserta_ig();
 			$peserta_mutqin_ig = $this->dashboard_model->program_mutqin_ig();
@@ -74,6 +79,8 @@ class Admin extends CI_Controller
 
 			http://[::1]/acs/access/card
 			//jumlah peserta ikhwan ganjil
+			$data['peserta'] = count($peserta);
+			///
 			$data['peserta_ganjil'] = count($peserta_ganjil);
 			$data['jumlah_ig'] = count($peserta_ig);
 			$data['program_mutqin_ig'] = count($peserta_mutqin_ig);
@@ -121,7 +128,7 @@ class Admin extends CI_Controller
 			$peserta_weekend_ignp_tahfizh = $this->dashboard_model->program_weekend_ignp_tahfizh();
 
 
-			//jumlah peserta ikhwan ganjil
+			//
 			$data['peserta_genap'] = count($peserta_genap);
 			$data['jumlah_ignp'] = count($peserta_ignp);
 			$data['program_mutqin_ignp'] = count($peserta_mutqin_ignp);
@@ -161,9 +168,6 @@ class Admin extends CI_Controller
 
 
 
-
-
-
 		//============================================================//
 			$data['peserta'] = $this->dashboard_model->peserta_ig();
 			$this->template->admin('admin/beranda',$data);
@@ -182,14 +186,18 @@ class Admin extends CI_Controller
 		{
 			$peserta = $this->dashboard_model->daftarpeserta();
 
-			$peserta_ganjil = $this->dashboard_model->daftarpeserta_ganjil();
+			$peserta = $this->dashboard_model->daftarpeserta();
 			$peserta_genap = $this->dashboard_model->daftarpeserta_genap();
+			$peserta_ganjil = $this->dashboard_model->daftarpeserta_ganjil();
+
 			$data['peserta']= $this->dashboard_model->daftarpeserta();
-			$data['jumlah_ganjil'] = count($peserta_ganjil);
+			$data['jumlah'] = count($peserta);
 			$data['jumlah_genap'] = count($peserta_genap);
+			$data['jumlah_ganjil'] = count($peserta_ganjil);
 			
-			$data['peserta_ganjil'] = $this->dashboard_model->daftarpeserta_ganjil();
+			
 			$data['peserta_genap'] = $this->dashboard_model->daftarpeserta_genap();
+			$data['peserta_ganjil'] = $this->dashboard_model->daftarpeserta_ganjil();
 			
 			$this->template->admin('admin/daftarpeserta',$data);
 			
@@ -265,6 +273,19 @@ class Admin extends CI_Controller
 		
 	}
 	
+	function edit_nilai($id_peserta){
+
+		$logged_in = $this->session->userdata('logged_in');
+		$level = $this->session->userdata('level');
+		if (!empty($logged_in) && $level=='admin')
+		{
+			$data['peserta'] = $this->admin_model->select_by_id($id_peserta);
+			$this->template->admin('admin/update_nilai',$data);
+		}
+	}
+
+
+
 	function proses_edit()
 	{
 		$logged_in = $this->session->userdata('logged_in');
@@ -309,7 +330,7 @@ class Admin extends CI_Controller
 				$data['wakaf']=$this->input->post('wakaf');
 				$data['uang_wakaf']=$this->input->post('uang_wakaf');
 				$data['barang_wakaf']=$this->input->post('barang_');
-				$data['nilai_tahsin']=$this->input->post('nilai_tahsin');
+		
 				
 				
 				
@@ -340,6 +361,60 @@ class Admin extends CI_Controller
 			
 	}
 	
+
+
+function proses_update_nilai()
+	{
+		$logged_in = $this->session->userdata('logged_in');
+		$level = $this->session->userdata('level');
+		if (!empty($logged_in) && $level=='admin')
+		{
+		
+					
+			$data['nilai_tahsin']=$this->input->post('nilai_tahsin');	
+			$id_peserta=$this->input->post('id_peserta');
+			
+			$this->admin_model->up_biodata($id_peserta,$data);
+			$data2['peserta'] = $this->admin_model->select_by_id($id_peserta);
+			$this->session->set_flashdata('info','Dokumen telah berhasil diupdate');
+			
+			
+			redirect('admin/belumdiverifikasi/');
+		}
+ 			else{
+ 					$this->template->home('home/content');
+
+ 			}		
+	
+		}
+
+
+		function update_pengumuman()
+	{
+		$logged_in = $this->session->userdata('logged_in');
+		$level = $this->session->userdata('level');
+		if (!empty($logged_in) && $level=='admin')
+		{
+		
+					
+			$data['isi']=$this->input->post('isi');	
+			$id=$this->input->post('id');
+			
+			$this->admin_model->updatePengumuman($id,$data);
+			$data2['pengumuman'] = $this->admin_model->select_by_id($id_peserta);
+			$this->session->set_flashdata('info','Dokumen telah berhasil diupdate');
+			
+			
+			redirect('admin/pengumuman/');
+		}
+ 			else{
+ 					$this->template->home('home/content');
+
+ 			}		
+	
+		}
+	
+
 
 
 
@@ -472,6 +547,9 @@ class Admin extends CI_Controller
 		}
 			
 	}
+
+
+	
 	
 	function daftarverifpeserta()
 	{

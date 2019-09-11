@@ -181,8 +181,6 @@ echo "<script type='text/javascript'>alert('$message');</script>";
 				$data['nama_panggilan']=$this->input->post('nama_panggilan');
 				$data['jenis_kelamin']=$this->input->post('jenis_kelamin');
 				$data['tanggal_lahir']=$this->input->post('tanggal_lahir');
-				$data['bulan_lahir']=$this->input->post('bulan_lahir');
-				$data['tahun_lahir']=$this->input->post('tahun_lahir');
 				$data['tempat_lahir']=$this->input->post('tempat_lahir');
 				$data['status_peserta']=$this->input->post('status_peserta');
 				$data['kewarganegaraan']=$this->input->post('kewarganegaraan');
@@ -357,6 +355,8 @@ echo "<script type='text/javascript'>alert('$message');</script>";
 		$level = $this->session->userdata('level');
 		$data['pengumuman'] = $this->ppdb_model->tampilpengumuman();
 		$data['peserta'] = $this->ppdb_model->pengumuman();
+	
+	
 		if (!empty($logged_in) && $level == 'peserta')
 		{
 			$this->template->dashboard_user('ppdb/pengumuman',$data);
@@ -367,23 +367,22 @@ echo "<script type='text/javascript'>alert('$message');</script>";
 		}
 	}
 
-function jadwal() {
+
+function jadwal()
+	{
 		$logged_in = $this->session->userdata('logged_in');
 		$level = $this->session->userdata('level');
-		$data['informasi'] = $this->ppdb_model->jadwal();
-		if (!empty($logged_in)&&$level =='peserta')
+		if (!empty($logged_in) && $level=='peserta')
 		{
-
+			$data['jadwal'] = $this->ppdb_model->jadwal();
 			$this->template->dashboard_user('ppdb/jadwal',$data);
-		} else {
-
-			$this->template->ppdb('ppdb/jadwal',$data);
-
+		}
+		else
+		{
+		$this->template->ppdb('ppdb/jadwal',$data);
+		}
+		
 	}
-}
-
-
-
 
 
 	

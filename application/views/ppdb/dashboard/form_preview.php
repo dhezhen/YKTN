@@ -118,12 +118,11 @@ function printDiv(elementId) {
 		<th style="width:20%;text-align: left;">Tempat, Tgl Lahir </th>
 
 			<td style="width:1%">:</td>
-			<td><?php echo $peserta->tempat_lahir.", ". 
-				$peserta->tanggal_lahir."-".
-				$peserta->bulan_lahir."-".
-				$peserta->tahun_lahir;
+			<td><?php echo $peserta->tempat_lahir."  ,".
+				date('d F Y', strtotime($peserta->tanggal_lahir))
+				
 
-			?></td>
+			?> </td>
 		</tr>
 <tr>
 		<th style="width:20%;text-align: left;">Usia</th>
@@ -259,10 +258,7 @@ Saya yang bertanda tangan dibawah ini :
 	<td width=20%>Tempat, Tanggal Lahir <br> </td>
 	<td width=1%>:</td>
 	<td width=45%><?php echo $peserta->tempat_lahir.", ". 
-				$peserta->tanggal_lahir."-".
-				$peserta->bulan_lahir."-".
-				$peserta->tahun_lahir;
-
+				$peserta->tanggal_lahir;
 			?></td>
 </tr>
 <tr>

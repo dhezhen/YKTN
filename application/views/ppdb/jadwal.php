@@ -11,11 +11,23 @@ body {padding:30px}
 	</div>
 
 	<div class="print-area">
-		<?php foreach ($informasi as $informasi) {
+
+			<?php 
+				if ($jadwal->status =='dihidupkan' ){
+
+					echo $jadwal->isi;
+
+				} else{
+
+					echo "Maaf Pengumuman Belum ada, tunggu informasi selanjutnya";
+
+				}
+
 			?>
 
-				<?php echo $informasi->informasi_kedatangan; ?>
 
-		<?php } ?>
 
+					
+
+				
 	</div>

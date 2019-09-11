@@ -119,7 +119,7 @@ function printDiv(elementId) {
 
 			<td style="width:1%">:</td>
 			<td><?php echo $peserta->tempat_lahir.", ". 
-				$peserta->tanggal_lahir;
+				date('d F Y', strtotime($peserta->tanggal_lahir));
 		
 
 			?></td>
@@ -258,9 +258,8 @@ Saya yang bertanda tangan dibawah ini :
 	<td width=20%>Tempat, Tanggal Lahir <br> </td>
 	<td width=1%>:</td>
 	<td width=45%><?php echo $peserta->tempat_lahir.", ". 
-				$peserta->tanggal_lahir."-".
-				$peserta->bulan_lahir."-".
-				$peserta->tahun_lahir;
+				date('d F Y',strtotime($peserta->tanggal_lahir));
+				
 
 			?></td>
 </tr>

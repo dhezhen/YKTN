@@ -14,7 +14,7 @@
 
 <div class="header">
 	
-	Karantina Tahfizh Al-Qurán Nasional Angkatan ke 43 & 44<br>
+	Karantina Tahfizh Al-Qurán Nasional Angkatan ke 43<br>
 	Daftar Peserta Yang telah Lolos melakukan Test Seleksi Administrasi dan Test Bacaan Al-Qur'an 
 
 </div>
