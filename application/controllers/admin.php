@@ -8,6 +8,7 @@ class Admin extends CI_Controller
 		parent::__construct();
 		$this->load->library('template');
 		$this->load->library('form_validation');
+		$this->load->library('session');
 		$this->load->model('admin_model');
 		$this->load->model('dashboard_model');
 		$this->load->helper('date');
@@ -18,10 +19,10 @@ class Admin extends CI_Controller
 	
 	function login()
 	{
-		$username = $this->input->post('username',true);
+		$email = $this->input->post('email',true);
 		$password = $this->input->post('password',true);
 		
-		$akun = $this->admin_model->cek_akun($username,$password);
+		$akun = $this->admin_model->cek_akun($email,$password);
 		$temp_account = count($akun);
 		
 		if ($temp_account > 0)
@@ -39,7 +40,7 @@ class Admin extends CI_Controller
 		}
 		else
 		{
-			$this->template->home('home/content');
+			$this->template->home('home/login');
 		}
 	}
 	
@@ -295,6 +296,7 @@ class Admin extends CI_Controller
 		
 				
 				$data['email']=$this->input->post('email');			
+				$data['password']=$this->input->post('password');	
 				$data['no_identitas']=$this->input->post('no_identitas');
 				$data['nama_lengkap']=$this->input->post('nama_lengkap');
 				$data['nama_lengkap_arab']=$this->input->post('nama_lengkap_arab');
@@ -487,7 +489,7 @@ function proses_update_nilai()
 				$gambar = $this->upload->data();
 				
 				$data['email']=$this->input->post('email');			
-				$data['username']=$this->input->post('username');			
+				$data['email']=$this->input->post('email');			
 				$data['password']=$this->input->post('password');			
 				$data['no_identitas']=$this->input->post('no_identitas');
 				$data['nama_lengkap']=$this->input->post('nama_lengkap');

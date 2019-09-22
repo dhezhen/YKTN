@@ -99,16 +99,16 @@
 
 	<div class="control-group">
 		
-		<label class="control-label" for="form-field2">Usename</label>
+		<label class="control-label" for="form-field2">Username</label>
 			<div class="controls">
-				<input type="text"  id="font"  placeholder="" name="email" value="<?php echo $peserta->username;?>" />			
+				<input type="text"  id="font"  placeholder="" name="username" value="<?php echo $peserta->username;?>" />			
 			</div>
 	</div>	
 	<div class="control-group">
 		
 		<label class="control-label" for="form-field2">Password</label>
 			<div class="controls">
-				<input type="text"  id="font"  placeholder="" name="Password" value="<?php echo $peserta->password;?>" />			
+				<input type="text"  id="font"  placeholder="" name="password" value="<?php echo $peserta->password;?>" />			
 			</div>
 	</div>	
 	

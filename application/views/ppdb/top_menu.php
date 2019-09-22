@@ -40,7 +40,7 @@
 	  
 	  <form class="navbar-form navbar-right" role="search" action="<?php echo site_url('ppdb/proses_login');?>" method="post">
   <div class="form-group">
-    <input type="text" class="form-control" placeholder="Username" name="username" value="<?php echo set_value('username')?>">
+    <input type="text" class="form-control" placeholder="email" name="email" value="<?php echo set_value('email')?>">
 	<input type="password" class="form-control" placeholder="Password" name="password" value="<?php echo set_value('password')?>">
   </div>
   <button type="submit" class="btn btn-default">Masuk</button>

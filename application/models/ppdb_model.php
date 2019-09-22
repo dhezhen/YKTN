@@ -12,11 +12,11 @@ class Ppdb_model extends CI_Model
 		return $this->db->get('peserta')->result();
 	}
 	
-	function cek_username($username)
+	function cek_email($email)
 	{
 		$this->db->select('*');
 		$this->db->from('peserta');
-		$this->db->where('username',$username);
+		$this->db->where('email',$email);
 		
 		return $this->db->get()->row();
 	}
@@ -27,11 +27,11 @@ class Ppdb_model extends CI_Model
 		$this->db->insert('peserta',$data);
 	}
 	
-	function cek_akun($username,$password)
+	function cek_akun($email,$password)
 	{
 		$this->db->select('*');
 		$this->db->from('peserta');
-		$this->db->where('username',$username);
+		$this->db->where('email',$email);
 		$this->db->where('password',$password);
 		
 		return $this->db->get()->row();

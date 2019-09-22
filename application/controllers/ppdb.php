@@ -7,6 +7,7 @@ class Ppdb extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->library('template');
+		$this->load->library('session');
 		$this->load->library('form_validation');
 		$this->load->model('ppdb_model');
 		$this->load->helper('date');
@@ -22,7 +23,7 @@ class Ppdb extends CI_Controller
 		}
 		else
 		{
-			$this->template->ppdb('ppdb/content');
+			$this->template->ppdb('ppdb/prosedur');
 		}
 	}
 	
@@ -34,21 +35,19 @@ class Ppdb extends CI_Controller
 	
 	function proses_daftar()
 	{
-		$data['email'] = $this->input->post('email',true);
-		$data['username'] = $this->input->post('username',true);
-		$data['password'] = $this->input->post('password',true);
 		$data['nama_lengkap'] = $this->input->post('nama_lengkap',true);
-		$data['nama_panggilan'] = $this->input->post('nama_panggilan',true);
+		$data['email'] = $this->input->post('email',true);
+		$data['password'] = $this->input->post('password',true);
+	
 		
-		$username = $this->input->post('username',true);
-		$cek_username = $this->ppdb_model->cek_username($username);
-		$num_account = count($cek_username);
+		$email = $this->input->post('email',true);
+		$cek_email = $this->ppdb_model->cek_email($email);
+		$num_account = count($cek_email);
 		
-		$this->form_validation->set_rules('email','EMAIL','required');
-		$this->form_validation->set_rules('username','Username','required');
-		$this->form_validation->set_rules('password','Password','required');
 		$this->form_validation->set_rules('nama_lengkap','Nama Lengkap','required');
-		$this->form_validation->set_rules('nama_panggilan','Nama Panggilan','required');
+		$this->form_validation->set_rules('email','Email','required');
+		$this->form_validation->set_rules('password','Password','required');
+		
 		
 		if ($this->form_validation->run()==FALSE)
 		{
@@ -58,7 +57,7 @@ class Ppdb extends CI_Controller
 		{
 			if ($num_account > 0)
 			{
-				$this->session->set_flashdata('error','<div class="alert alert-warning" role="alert">Maaf username sudah ada yang menggunakan</div>');
+				$this->session->set_flashdata('error','<div class="alert alert-warning" role="alert">Maaf email sudah ada yang menggunakan</div>');
 				$this->template->ppdb('ppdb/pendaftaran');
 			}
 			else
@@ -87,10 +86,10 @@ class Ppdb extends CI_Controller
 	
 	function proses_login()
 	{
-		$username = $this->input->post('username',true);
+		$email = $this->input->post('email',true);
 		$password = $this->input->post('password',true);
 		
-		$akun2 = $this->ppdb_model->cek_akun($username,$password);
+		$akun2 = $this->ppdb_model->cek_akun($email,$password);
 		$akun = count($akun2);
 		
 		if ($akun > 0)
@@ -111,9 +110,10 @@ echo "<script type='text/javascript'>alert('$message');</script>";
 		}
 		else
 		{
+				$message = "Maaf,Email atau password salah";
+				echo "<script type='text/javascript'>alert('$message');</script>";
 
-
-			$this->template->ppdb('ppdb/content');
+			$this->template->ppdb('ppdb/prosedur');
 		}
 	}
 
@@ -129,7 +129,7 @@ $message = "Terimakasih, jangan lupa Tilawah";
 echo "<script type='text/javascript'>alert('$message');</script>";
 		
 
-		$this->template->ppdb('ppdb/content');
+		$this->template->ppdb('ppdb/prosedur');
 	}
 	
 	function update_biodata($id_peserta)
@@ -144,7 +144,7 @@ echo "<script type='text/javascript'>alert('$message');</script>";
 		}
 		else
 		{
-			$this->template->ppdb('ppdb/content');
+			$this->template->ppdb('ppdb/prosedur');
 		}
 	}
 	
@@ -236,7 +236,7 @@ echo "<script type='text/javascript'>alert('$message');</script>";
 		}
 		else
 		{
-			$this->template->ppdb('ppdb/content');
+			$this->template->ppdb('ppdb/prosedur');
 		}
 	}
 	
@@ -270,7 +270,7 @@ echo "<script type='text/javascript'>alert('$message');</script>";
 		}
 		else
 		{
-			$this->template->ppdb('ppdb/content');
+			$this->template->ppdb('ppdb/prosedur');
 		}
 	}
 	
@@ -288,7 +288,7 @@ echo "<script type='text/javascript'>alert('$message');</script>";
 		}
 		else
 		{
-			$this->template->ppdb('ppdb/content');
+			$this->template->ppdb('ppdb/prosedur');
 		}
 	}
 
@@ -329,7 +329,7 @@ echo "<script type='text/javascript'>alert('$message');</script>";
 		}
 		else
 		{
-			$this->template->ppdb('ppdb/content');
+			$this->template->ppdb('ppdb/prosedur');
 		}
 	}
 	
@@ -345,7 +345,7 @@ echo "<script type='text/javascript'>alert('$message');</script>";
 		}
 		else
 		{
-			$this->template->ppdb('ppdb/content');
+			$this->template->ppdb('ppdb/prosedur');
 		}
 	}
 	

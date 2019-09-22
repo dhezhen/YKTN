@@ -112,11 +112,11 @@ function daftarpeserta()
 		$this->db->update('pengumuman',$data);
 	}
 	
-	function cek_akun($username,$password)
+	function cek_akun($email,$password)
 	{
 		$this->db->select('*');
 		$this->db->from('admin');
-		$this->db->where('username',$username);
+		$this->db->where('email',$email);
 		$this->db->where('password',$password);
 		
 		return $this->db->get()->row();

@@ -21,11 +21,11 @@
 <div class="container">
 <form class="form-signin" action="<?php echo site_url('admin/login');?>" method="post" onSubmit="return cekform();">
           <div class="form-group">
-            <label for="psw"><span class="glyphicon glyphicon-user"></span> Username</label>
-            <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+            <label for="psw"><span class="glyphicon glyphicon-user"></span> Email </label>
+            <input type="text" class="form-control" id="email" name="email" placeholder="Email">
           </div>
           <div class="form-group">
-            <label for="usrname"><span class="glyphicon glyphicon-lock"></span> Password</label>
+            <label for="Email"><span class="glyphicon glyphicon-lock"></span> Password</label>
             <input type="password" class="form-control" id="password" name="password" placeholder="Password">
           </div>
       
