@@ -1,4 +1,6 @@
-<meta charset="utf-8">
+<script src='<?php echo base_url('assets/fontawesome/js/all.js');?>'></script>
+
+<link rel="stylesheet" href="<?php echo base_url('assets/fontawesome/css/all.css');?>" />
 
 
 
@@ -8,8 +10,8 @@
 
 								<h3 class="header smaller lighter blue">Peserta Yang Telah Verifikasi : <?php echo $jumlah;?></h3>
 								<div class="container"> 
- <button type="button" class="btn btn-outline-primary" ><a href="<?php echo base_url() ?>excel/export"> Download to Excel </a>
-</button></div>
+ <a href="<?php echo base_url() ?>excel/export"> <i class='fas fa-file-excel ' style='font-size:36px;color:green'></i></a>
+</div>
 								 
 								</button>
 								<table class="table table-striped table-bordered data">

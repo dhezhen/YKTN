@@ -551,7 +551,21 @@ function proses_update_nilai()
 	}
 
 
-	
+	function keuangan()
+	{
+		$logged_in= $this->session->userdata('logged_in');
+		$level = $this->session->userdata('level');
+		if (!empty($logged_in)&& $level=='admin')
+		{
+			$this->template->admin('admin/keuangan');
+		}
+		else
+		{
+			$this->template->home('home/content');
+		}
+
+	}
+
 	
 	function daftarverifpeserta()
 	{

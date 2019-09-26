@@ -1,3 +1,11 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<script src='<?php echo base_url('assets/fontawesome/js/all.js');?>'>
+	
+
+</script>
+pt>
+<link rel="stylesheet" href="<?php echo base_url('assets/fontawesome/css/all.css');?>" />
+
 <div class="container">
 								<h3 class="header smaller lighter blue"> 
 									Total Peserta Ganjil:  <?PHP echo $jumlah_ganjil; ?>   
@@ -38,9 +46,9 @@
 					<td><?php echo $peserta->no_handphone;?></td>
 					<td><img style="width:75px; height: 75px"src="<?php echo base_url() .'uploads/Dokumen/'.$peserta->foto_diri ?>"> </td>
 					<!--<td><a href="<?php echo site_url('admin/download/'.$peserta->dokumen);?>">Download Lampiran</a></td> -->
-					<td><a href="<?php echo site_url('admin/biodatapeserta/'.$peserta->id_peserta);?>">Detail | </a>
-					<a href="<?php echo site_url('admin/editpeserta/'.$peserta->id_peserta);?>">Edit | </a>
-					<a href="<?php echo site_url('admin/hapus_peserta/'.$peserta->id_peserta);?>">Hapus</a>
+					<td><a href="<?php echo site_url('admin/biodatapeserta/'.$peserta->id_peserta);?>"><i class='fas fa-user' style='font-size:30px color:blue' ></i></a>
+					<a href="<?php echo site_url('admin/editpeserta/'.$peserta->id_peserta);?>"><i class='far fa-edit' style='font-size:15px'></i></a>
+					<a href="<?php echo site_url('admin/hapus_peserta/'.$peserta->id_peserta);?>"><i class='fas fa-trash' style='font-size:30px color:red' ></i></a>
 					</td>
 					
 				</tr>

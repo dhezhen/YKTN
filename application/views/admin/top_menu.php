@@ -4,7 +4,7 @@
 					<a href="#" class="brand">
 						<small>
 							<i class="icon-leaf"></i>
-							Ace Admin
+							SISINFO YKTN
 						</small>
 					</a><!--/.brand-->
 
@@ -17,8 +17,8 @@
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
 								<img class="nav-user-photo" src="<?php echo base_url('assets/ace/avatars/user.jpg');?>" alt="Jason's Photo" />
 								<span class="user-info">
-									<small>Welcome,</small>
-									Jason
+									<small>Ahlan Wasahlan</small>
+										<?php echo $this->session->userdata('email');?>
 								</span>
 
 								<i class="icon-caret-down"></i>

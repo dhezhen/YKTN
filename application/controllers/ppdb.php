@@ -19,7 +19,10 @@ class Ppdb extends CI_Controller
 		$level = $this->session->userdata('level');
 		if (!empty($logged_in) && $level=='peserta')
 		{
-			$this->template->dashboard_user('ppdb/dashboard/home');
+			$id_peserta = $this->session->userdata('id_peserta');
+			$data['peserta'] = $this->ppdb_model->select_by_id($id_peserta);
+			$this->template->dashboard_user('ppdb/dashboard/home',$data);
+			
 		}
 		else
 		{
@@ -333,21 +336,7 @@ echo "<script type='text/javascript'>alert('$message');</script>";
 		}
 	}
 	
-	function status()
-	{
-		$logged_in = $this->session->userdata('logged_in');
-		$level = $this->session->userdata('level');
-		if (!empty($logged_in) && $level == 'peserta')
-		{
-			$id_peserta = $this->session->userdata('id_peserta');
-			$data['peserta'] = $this->ppdb_model->select_by_id($id_peserta);
-			$this->template->dashboard_user('ppdb/dashboard/status',$data);
-		}
-		else
-		{
-			$this->template->ppdb('ppdb/prosedur');
-		}
-	}
+	
 	
 	function pengumuman()
 	{

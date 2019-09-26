@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
+<script src='<?php echo base_url('assets/fontawesome/js/all.js');?>'></script>
+<link rel="stylesheet" href="<?php echo base_url('assets/fontawesome/css/all.css');?>" />
 <head>
+
 	<title>Print Formulir</title>
 </head>
 
@@ -51,9 +54,12 @@ function printDiv(elementId) {
 </style>
 <body>
 
+
 	<center><a href="javascript:printDiv('print-area-1');">
 <button class="button">Print Formulir</button></a>
+
 <center>
+
 <div id="print-area-1" class="print-area">
 <table class="table table-striped table-responsive table-bordered" border="0">
  
@@ -356,6 +362,7 @@ Kuningan, <?php echo tgl_indo(date("Y-m-d")); ?>
 
 		<!--<th><a href="<?php echo site_url('ppdb/cetak');?>"> Cetak</a></th> -->
 		<th><a href="javascript:printDiv('print-area-1');">Print</a></th>
+	
 	</tr>
 	</table>
 

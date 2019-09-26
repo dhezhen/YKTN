@@ -1,7 +1,7 @@
 <html lang="id">
 <head>
     <meta charset="utf-8">
-    <title>Data Barang</title>
+    <title>Data Peserta yang belum di verifikasi</title>
     <link href="<?php echo base_url().'assets/css/bootstrap.css'?>" rel="stylesheet">
     <link href="<?php echo base_url().'assets/css/jquery.dataTables.min.css'?>" rel="stylesheet">
 </head>

@@ -157,7 +157,7 @@
       <input type="text" class="form-control" id="inputEmail3" name="tempat_lahir" value="<?php echo $peserta->tempat_lahir;?>" placeholder="Tanggal Lahir(xx)">
     </div>
     <div class="col-sm-4">
-      <input type="date" class="form-control" name="tanggal_lahir" value="" placeholder="Tanggal Lahir">
+      <input type="date" class="form-control" name="tanggal_lahir" value="<?php echo($peserta->tanggal_lahir)?>" placeholder="Tanggal Lahir">
     </div>
    
 

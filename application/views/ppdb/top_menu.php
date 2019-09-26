@@ -14,7 +14,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="<?php echo site_url('ppdb/daftar');?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Pendaftaran</a></li>
+        <li>
+            <a href="<?php echo site_url('ppdb/daftar');?>">
+              <span class="glyphicon glyphicon-pencil" aria-hidden="true"> </span> Pendaftaran
+            </a>
+        </li>
    
         <!--
         <li><a href="<?php echo site_url('ppdb/daftarpeserta');?>"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Peserta</a></li>
