@@ -7,8 +7,8 @@
 	
 	<title>SISINFO YKTN</title>
 	
-	<link href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css');?>" rel="stylesheet">
-	<link href="<?php echo base_url('assets/datepicker/bootstrap-datetimepicker.min.css');?>" rel="stylesheet">
+	<link href="<?php echo base_url('assets/css/bootstrap.min.css');?>" rel="stylesheet">
+	<link href="<?php echo base_url('assets/css/bootstrap-datetimepicker.min.css');?>" rel="stylesheet">
 	<link href="<?php echo base_url('assets/bootstrap/css/custom2.css');?>" rel="stylesheet">
 	<link href="<?php echo base_url('assets/datatables/css/jquery.dataTables.min.css');?>" rel="stylesheet">
 	<link href="<?php echo base_url('assets/datatables/css/dataTables.bootstrap.min.css');?>" rel="stylesheet">
@@ -46,9 +46,9 @@
 		</div>
 		
 	</div>
-<script type="text/javascript" src="<?php echo base_url('assets/bootstrap/js/jquery.min.js');?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/js/jquery-3.4.1.min.js');?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/datepicker/js/bootstrap-datetimepicker.min.js');?>"></script>
-<script type="text/javascript" src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js');?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script>
 <script>
 $(document).ready(function(){
 $(‘.datepicker’).datepicker();

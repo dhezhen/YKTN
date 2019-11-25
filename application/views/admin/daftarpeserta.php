@@ -1,15 +1,12 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-<script src='<?php echo base_url('assets/fontawesome/js/all.js');?>'>
-	
+<script src='<?php echo base_url('assets/fontawesome/js/all.js');?>'></script>
 
-</script>
-pt>
 <link rel="stylesheet" href="<?php echo base_url('assets/fontawesome/css/all.css');?>" />
 
 <div class="container">
 								<h3 class="header smaller lighter blue"> 
-									Total Peserta Ganjil:  <?PHP echo $jumlah_ganjil; ?>   
-									|| Total Peserta Genap : <?PHP echo $jumlah_genap; ?>   
+									Total Peserta angkatan   <?php echo $this->session->userdata('angkatan');?> :<br>
+									  <?PHP echo $total_peserta; ?> Orang
 
 
 							</h3> 

@@ -2,15 +2,15 @@
 <head>
     <meta charset="utf-8">
     <title>Data Peserta yang belum di verifikasi</title>
-    <link href="<?php echo base_url().'assets/css/bootstrap.css'?>" rel="stylesheet">
-    <link href="<?php echo base_url().'assets/css/jquery.dataTables.min.css'?>" rel="stylesheet">
+    <script src='<?php echo base_url('assets/bootstrap/css/bootstrap.css');?>'></script>
+    <link href="<?php echo base_url().'assets/datatables/css/jquery.dataTables.min.css'?>" rel="stylesheet">
 </head>
 <body>
  
-<div class="container">
+
      
     
-<div class="container">
+<div >
                 <h3 class="header smaller lighter blue">Peserta Yang Belum Verifikasi : <?php echo $jumlah;?></h3>
                 <table class="table table-striped table-bordered data">
       <thead>

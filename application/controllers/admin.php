@@ -21,6 +21,7 @@ class Admin extends CI_Controller
 	{
 		$email = $this->input->post('email',true);
 		$password = $this->input->post('password',true);
+		$angkatan = $this->input->post('angkatan',true);
 		
 		$akun = $this->admin_model->cek_akun($email,$password);
 		$temp_account = count($akun);
@@ -29,6 +30,7 @@ class Admin extends CI_Controller
 		{
 			$data = array(
 							'level'=>$akun->level,
+							'angkatan'=>$angkatan,
 							'logged_in'=>true
 			);
 			
@@ -66,111 +68,61 @@ class Admin extends CI_Controller
 
 		
 			$peserta = $this->dashboard_model->daftarpeserta();
+			$total_peserta = $this->dashboard_model->total_peserta();
 
 				//Peserta ganjill=======|| ganjil (g) || genap = (gnp)
-			$peserta_ganjil = $this->dashboard_model->daftarpeserta_ganjil();
-			$peserta_ig = $this->dashboard_model->peserta_ig();
-			$peserta_mutqin_ig = $this->dashboard_model->program_mutqin_ig();
-			$peserta_sebulan_ig = $this->dashboard_model->program_sebulan_ig();
-			$peserta_3pekan_ig = $this->dashboard_model->program_3pekan_ig();
-			$peserta_2pekan_ig = $this->dashboard_model->program_2pekan_ig();
-			$peserta_1pekan_ig = $this->dashboard_model->program_1pekan_ig();
-			$peserta_weekend_ig_tahsin = $this->dashboard_model->program_weekend_ig_tahsin();
-			$peserta_weekend_ig_tahfizh = $this->dashboard_model->program_weekend_ig_tahfizh();
+			//$peserta_ganjil = $this->dashboard_model->daftarpeserta_ganjil();
+			$peserta_i = $this->dashboard_model->peserta_i();
+			$peserta_mutqin_i = $this->dashboard_model->program_mutqin_i();
+			$peserta_sebulan_i = $this->dashboard_model->program_sebulan_i();
+			$peserta_3pekan_i = $this->dashboard_model->program_3pekan_i();
+			$peserta_2pekan_i = $this->dashboard_model->program_2pekan_i();
+			$peserta_1pekan_i = $this->dashboard_model->program_1pekan_i();
+			$peserta_weekend_i_tahsin = $this->dashboard_model->program_weekend_i_tahsin();
+			$peserta_weekend_i_tahfizh = $this->dashboard_model->program_weekend_i_tahfizh();
 
 			http://[::1]/acs/access/card
 			//jumlah peserta ikhwan ganjil
-			$data['peserta'] = count($peserta);
 			///
-			$data['peserta_ganjil'] = count($peserta_ganjil);
-			$data['jumlah_ig'] = count($peserta_ig);
-			$data['program_mutqin_ig'] = count($peserta_mutqin_ig);
-			$data['program_sebulan_ig'] = count($peserta_sebulan_ig);
-			$data['program_3pekan_ig'] = count($peserta_3pekan_ig);
-			$data['program_2pekan_ig'] = count($peserta_2pekan_ig);
-			$data['program_1pekan_ig'] = count($peserta_1pekan_ig);
-			$data['program_weekend_ig_tahfizh'] = count($peserta_weekend_ig_tahfizh);
-			$data['program_weekend_ig_tahsin'] = count($peserta_weekend_ig_tahsin);
+			//$data['peserta_ganjil'] = count($peserta_ganjil);
+			$data['total_peserta'] = count($peserta);
+			$data['peserta'] = count($peserta);
+			$data['jumlah_i'] = count($peserta_i);
+			$data['program_mutqin_i'] = count($peserta_mutqin_i);
+			$data['program_sebulan_i'] = count($peserta_sebulan_i);
+			$data['program_3pekan_i'] = count($peserta_3pekan_i);
+			$data['program_2pekan_i'] = count($peserta_2pekan_i);
+			$data['program_1pekan_i'] = count($peserta_1pekan_i);
+			$data['program_weekend_i_tahfizh'] = count($peserta_weekend_i_tahfizh);
+			$data['program_weekend_i_tahsin'] = count($peserta_weekend_i_tahsin);
 
 
 
 			//akhwat ganjjil 
-			$peserta_ag = $this->dashboard_model->peserta_ag();
-			$peserta_mutqin_ag = $this->dashboard_model->program_mutqin_ag();
-			$peserta_sebulan_ag = $this->dashboard_model->program_sebulan_ag();
-			$peserta_3pekan_ag = $this->dashboard_model->program_3pekan_ag();
-			$peserta_2pekan_ag = $this->dashboard_model->program_2pekan_ag();
-			$peserta_1pekan_ag = $this->dashboard_model->program_1pekan_ag();
-			$peserta_weekend_ag_tahsin = $this->dashboard_model->program_weekend_ag_tahsin();
-			$peserta_weekend_ag_tahfizh = $this->dashboard_model->program_weekend_ag_tahfizh();
+			$peserta_a = $this->dashboard_model->peserta_a();
+			$peserta_mutqin_a = $this->dashboard_model->program_mutqin_a();
+			$peserta_sebulan_a = $this->dashboard_model->program_sebulan_a();
+			$peserta_3pekan_a = $this->dashboard_model->program_3pekan_a();
+			$peserta_2pekan_a = $this->dashboard_model->program_2pekan_a();
+			$peserta_1pekan_a = $this->dashboard_model->program_1pekan_a();
+			$peserta_weekend_a_tahsin = $this->dashboard_model->program_weekend_a_tahsin();
+			$peserta_weekend_a_tahfizh = $this->dashboard_model->program_weekend_a_tahfizh();
 
 
 			//jumlah peserta akwaht ganjil
-			$data['jumlah_ag'] = count($peserta_ag);
-			$data['program_mutqin_ag'] = count($peserta_mutqin_ag);
-			$data['program_sebulan_ag'] = count($peserta_sebulan_ag);
-			$data['program_3pekan_ag'] = count($peserta_3pekan_ag);
-			$data['program_2pekan_ag'] = count($peserta_2pekan_ag);
-			$data['program_1pekan_ag'] = count($peserta_1pekan_ag);
-			$data['program_weekend_ag_tahfizh'] = count($peserta_weekend_ag_tahfizh);
-			$data['program_weekend_ag_tahsin'] = count($peserta_weekend_ag_tahsin);
+			$data['jumlah_a'] = count($peserta_a);
+			$data['program_mutqin_a'] = count($peserta_mutqin_a);
+			$data['program_sebulan_a'] = count($peserta_sebulan_a);
+			$data['program_3pekan_a'] = count($peserta_3pekan_a);
+			$data['program_2pekan_a'] = count($peserta_2pekan_a);
+			$data['program_1pekan_a'] = count($peserta_1pekan_a);
+			$data['program_weekend_a_tahfizh'] = count($peserta_weekend_a_tahfizh);
+			$data['program_weekend_a_tahsin'] = count($peserta_weekend_a_tahsin);
 			
-			//batas perhitungan peserta ganjil===============================
-
-			//Peserta genap==================================================
-			$peserta_genap = $this->dashboard_model->daftarpeserta_genap();
-			$peserta_ignp = $this->dashboard_model->peserta_ignp();
-			$peserta_mutqin_ignp = $this->dashboard_model->program_mutqin_ignp();
-			$peserta_sebulan_ignp = $this->dashboard_model->program_sebulan_ignp();
-			$peserta_3pekan_ignp = $this->dashboard_model->program_3pekan_ignp();
-			$peserta_2pekan_ignp = $this->dashboard_model->program_2pekan_ignp();
-			$peserta_1pekan_ignp = $this->dashboard_model->program_1pekan_ignp();
-			$peserta_weekend_ignp_tahsin = $this->dashboard_model->program_weekend_ignp_tahsin();
-			$peserta_weekend_ignp_tahfizh = $this->dashboard_model->program_weekend_ignp_tahfizh();
-
-
-			//
-			$data['peserta_genap'] = count($peserta_genap);
-			$data['jumlah_ignp'] = count($peserta_ignp);
-			$data['program_mutqin_ignp'] = count($peserta_mutqin_ignp);
-			$data['program_sebulan_ignp'] = count($peserta_sebulan_ignp);
-			$data['program_3pekan_ignp'] = count($peserta_3pekan_ignp);
-			$data['program_2pekan_ignp'] = count($peserta_2pekan_ignp);
-			$data['program_1pekan_ignp'] = count($peserta_1pekan_ignp);
-			$data['program_weekend_ignp_tahfizh'] = count($peserta_weekend_ignp_tahfizh);
-			$data['program_weekend_ignp_tahsin'] = count($peserta_weekend_ignp_tahsin);
-
-
-
-			//akhwat ganjjil 
-			$peserta_agnp = $this->dashboard_model->peserta_agnp();
-			$peserta_mutqin_agnp = $this->dashboard_model->program_mutqin_agnp();
-			$peserta_sebulan_agnp = $this->dashboard_model->program_sebulan_agnp();
-			$peserta_3pekan_agnp = $this->dashboard_model->program_3pekan_agnp();
-			$peserta_2pekan_agnp = $this->dashboard_model->program_2pekan_agnp();
-			$peserta_1pekan_agnp = $this->dashboard_model->program_1pekan_agnp();
-			$peserta_weekend_agnp_tahsin = $this->dashboard_model->program_weekend_agnp_tahsin();
-			$peserta_weekend_agnp_tahfizh = $this->dashboard_model->program_weekend_agnp_tahfizh();
-
-
-			//jumlah peserta akwaht genap
-			$data['jumlah_agnp'] = count($peserta_agnp);
-			$data['program_mutqin_agnp'] = count($peserta_mutqin_agnp);
-			$data['program_sebulan_agnp'] = count($peserta_sebulan_agnp);
-			$data['program_3pekan_agnp'] = count($peserta_3pekan_agnp);
-			$data['program_2pekan_agnp'] = count($peserta_2pekan_agnp);
-			$data['program_1pekan_agnp'] = count($peserta_1pekan_agnp);
-			$data['program_weekend_agnp_tahfizh'] = count($peserta_weekend_agnp_tahfizh);
-			$data['program_weekend_agnp_tahsin'] = count($peserta_weekend_agnp_tahsin);
-
-
-			//batas Peserta genap==================================================
-
-
-
+			
 
 		//============================================================//
-			$data['peserta'] = $this->dashboard_model->peserta_ig();
+			$data['peserta'] = $this->dashboard_model->peserta_i();
 			$this->template->admin('admin/beranda',$data);
 		}
 		else
@@ -184,21 +136,14 @@ class Admin extends CI_Controller
 		$logged_in = $this->session->userdata('logged_in');
 		$level = $this->session->userdata('level');
 		if (!empty($logged_in) && $level=='admin')
-		{
-			$peserta = $this->dashboard_model->daftarpeserta();
-
-			$peserta = $this->dashboard_model->daftarpeserta();
-			$peserta_genap = $this->dashboard_model->daftarpeserta_genap();
-			$peserta_ganjil = $this->dashboard_model->daftarpeserta_ganjil();
-
+		{		
+			$total_peserta = $this->dashboard_model->total_peserta();
 			$data['peserta']= $this->dashboard_model->daftarpeserta();
-			$data['jumlah'] = count($peserta);
-			$data['jumlah_genap'] = count($peserta_genap);
-			$data['jumlah_ganjil'] = count($peserta_ganjil);
+			$data['total_peserta'] = count($total_peserta);
+
 			
 			
-			$data['peserta_genap'] = $this->dashboard_model->daftarpeserta_genap();
-			$data['peserta_ganjil'] = $this->dashboard_model->daftarpeserta_ganjil();
+			
 			
 			$this->template->admin('admin/daftarpeserta',$data);
 			
@@ -274,6 +219,9 @@ class Admin extends CI_Controller
 		
 	}
 	
+	
+
+
 	function edit_nilai($id_peserta){
 
 		$logged_in = $this->session->userdata('logged_in');
@@ -417,12 +365,6 @@ function proses_update_nilai()
 		}
 	
 
-
-
-
-
-
-
 	function hapus_peserta($id_peserta)
 	{
 		$logged_in = $this->session->userdata('logged_in');
@@ -443,6 +385,7 @@ function proses_update_nilai()
 		}
 		
 	}
+	
 	
 	function tambahpeserta()
 	{
@@ -556,8 +499,11 @@ function proses_update_nilai()
 		$logged_in= $this->session->userdata('logged_in');
 		$level = $this->session->userdata('level');
 		if (!empty($logged_in)&& $level=='admin')
+
 		{
-			$this->template->admin('admin/keuangan');
+			
+			$data['peserta'] = $this->admin_model->daftarpeserta();
+			$this->template->admin('admin/keuangan',$data);
 		}
 		else
 		{
@@ -565,6 +511,45 @@ function proses_update_nilai()
 		}
 
 	}
+	
+	function form_pembayaran($id_peserta){
+
+		$logged_in = $this->session->userdata('logged_in');
+		$level = $this->session->userdata('level');
+		if (!empty($logged_in) && $level=='admin')
+		{
+			$data['peserta'] = $this->admin_model->select_by_id($id_peserta);
+			$this->template->admin('admin/form_pembayaran',$data);
+		}
+	}
+
+	function update_pembayaran()
+	{
+		$logged_in = $this->session->userdata('logged_in');
+		$level = $this->session->userdata('level');
+		if (!empty($logged_in) && $level=='admin')
+		{
+		
+					
+			$data['uang_regis']=$this->input->post('uang_regis');	
+			$data['uang_akomodasi']=$this->input->post('uang_akomodasi');	
+			$data['uang_wakaf']=$this->input->post('uang_wakaf');	
+			$id_peserta=$this->input->post('id_peserta');
+			
+			$this->admin_model->up_biodata($id_peserta,$data);
+			$data2['peserta'] = $this->admin_model->select_by_id($id_peserta);
+			$this->session->set_flashdata('info','Dokumen telah berhasil diupdate');
+			
+			
+			redirect('admin/keuangan');
+		}
+ 			else{
+ 					$this->template->home('home/content');
+
+ 			}		
+	
+		}
+
 
 	
 	function daftarverifpeserta()

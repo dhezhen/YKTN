@@ -99,7 +99,6 @@ class Ppdb extends CI_Controller
 		{
 			$data_session = array(
 									'level'=>$akun2->level,
-									'nama_panggilan'=>$akun2->nama_panggilan,
 									'id_peserta'=>$akun2->id_peserta,
 									'status'=>$akun2->status,
 									'id_peserta'=>$akun2->id_peserta,
@@ -108,8 +107,11 @@ class Ppdb extends CI_Controller
 			
 			$this->session->set_userdata($data_session);
 			$message = "anda berhasil login";
-echo "<script type='text/javascript'>alert('$message');</script>";
-			$this->template->dashboard_user('ppdb/dashboard/home');
+			$id_peserta = $this->session->userdata('id_peserta');
+			$data['peserta'] = $this->ppdb_model->select_by_id($id_peserta);
+			//echo "<script type='text/javascript'>alert('$message');</script>";
+
+			$this->template->dashboard_user('ppdb/dashboard/home',$data);
 		}
 		else
 		{

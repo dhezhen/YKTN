@@ -68,8 +68,8 @@ function printDiv(elementId) {
 
 	<tr >
 		</td>
-		<td >No Pendaftaran : <br> <b><?php echo $peserta->id_peserta?><b> </td>
-		<td colspan="" ><h4 align="center"> DATA PESERTA KARANTINA 
+		<td >No Reg. : <br> <b><?php echo $peserta->id_peserta?><b> </td>
+		<td colspan="" ><h4 align="center"> FORMULIR PENDAFTARAN 
 			</h4></td>
 			<td ><b><font style="font-size: 15pt;text-align: center;"><?php echo $peserta->status_peserta?><b> </td>
 	</tr>

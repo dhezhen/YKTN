@@ -42,7 +42,7 @@
 
 
 <div class="control-group">
-		<label class="control-label" for="form-field-2">Masukan Nilai Tahsin</label>
+		<label class="control-label" for="form-field-2">Masukan Nilai Tes</label>
 		<div class="controls">
 			<input type="number"   name="nilai_tahsin" min='10' max='100' value="<?php echo $peserta->nilai_tahsin;?>" />						
 		</div>

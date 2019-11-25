@@ -57,7 +57,8 @@
       
 	  
 	  <ul class="nav navbar-nav navbar-right">
-		<li><a href="<?php echo site_url('ppdb/logout');?>"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> <?php echo $this->session->userdata('nama_panggilan');?>(Logout)</a></li>
+    
+		<li> <a  href="<?php echo site_url('ppdb/logout');?>"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> (Logout)</a></li>
 		</ul>
 	  
     </div><!-- /.navbar-collapse -->

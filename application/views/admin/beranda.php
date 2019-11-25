@@ -10,35 +10,33 @@
       google.charts.load('current', {'packages':['corechart']});
 
       // Draw the pie chart for Sarah's pizza when Charts is loaded.
-      google.charts.setOnLoadCallback(ikhwan_ganjil_chart);
-      google.charts.setOnLoadCallback(akhwat_ganjil_chart);
-      google.charts.setOnLoadCallback(ikhwan_genap_chart);
-      google.charts.setOnLoadCallback(akhwat_genap_chart);
-      google.charts.setOnLoadCallback(akhwat_ikhwan_ganjil_chart);
-      google.charts.setOnLoadCallback(akhwat_ikhwan_genap_chart);
+      google.charts.setOnLoadCallback(ikhwan_chart);
+      google.charts.setOnLoadCallback(akhwat_chart);
+      google.charts.setOnLoadCallback(akhwat_ikhwan_chart);
+     
 
       // Callback that draws the pie chart for Sarah's pizza.
-      function ikhwan_ganjil_chart() {
+      function ikhwan_chart() {
 
         // Create the data table for Sarah's pizza.
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'kategori');
         data.addColumn('number', 'Slices');
         data.addRows([
-          ['3 Bulan Mutqin', <?php echo $program_mutqin_ig; ?>],
-          ['1 Bulan', <?php echo $program_sebulan_ig; ?>],
-          ['3 Pekan', <?php echo $program_3pekan_ig; ?>],
-          ['2 Pekan', <?php echo $program_2pekan_ig; ?>],
-          ['1 Pekan', <?php echo $program_1pekan_ig; ?>],
-          ['Weekend Tahfizh ', <?php echo $program_weekend_ig_tahfizh; ?>],
-          ['Weekend Tahsin ', <?php echo $program_weekend_ig_tahsin; ?>]
+          ['3 Bulan Mutqin', <?php echo $program_mutqin_i; ?>],
+          ['1 Bulan', <?php echo $program_sebulan_i; ?>],
+          ['3 Pekan', <?php echo $program_3pekan_i; ?>],
+          ['2 Pekan', <?php echo $program_2pekan_i; ?>],
+          ['1 Pekan', <?php echo $program_1pekan_i; ?>],
+          ['Weekend Tahfizh ', <?php echo $program_weekend_i_tahfizh; ?>],
+          ['Weekend Tahsin ', <?php echo $program_weekend_i_tahsin; ?>]
         ]);
 
         // Set options for Sarah's pie chart.
-        var options = {title:'Persentase  Ikhwan Angkatan 43',
-                       width:400,
+        var options = {title:'Persentase  Ikhwan Angkatan <?php echo $this->session->userdata('angkatan');?>',
+                       width:350,
                      is3D: true,
-                       height:300};
+                       height:250};
 
         // Instantiate and draw the chart for Sarah's pizza.
         var chart = new google.visualization.PieChart(document.getElementById('ikhwan_chart_div'));
@@ -46,27 +44,27 @@
       }
 
       // Callback that draws the pie chart for Anthony's pizza.
-      function akhwat_ganjil_chart() {
+      function akhwat_chart() {
 
         // Create the data table for Anthony's pizza.
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'kategori');
         data.addColumn('number', 'Slices');
         data.addRows([
-         ['3 Bulan Mutqin', <?php echo $program_mutqin_ag; ?>],
-          ['1 Bulan', <?php echo $program_sebulan_ag; ?>],
-          ['3 Pekan', <?php echo $program_3pekan_ag; ?>],
-          ['2 Pekan', <?php echo $program_2pekan_ag; ?>],
-          ['1 Pekan', <?php echo $program_1pekan_ag; ?>],
-          ['Weekend Tahfizh ', <?php echo $program_weekend_ag_tahfizh; ?>],
-          ['Weekend Tahsin ', <?php echo $program_weekend_ag_tahsin; ?>]
+         ['3 Bulan Mutqin', <?php echo $program_mutqin_a; ?>],
+          ['1 Bulan', <?php echo $program_sebulan_a; ?>],
+          ['3 Pekan', <?php echo $program_3pekan_a; ?>],
+          ['2 Pekan', <?php echo $program_2pekan_a; ?>],
+          ['1 Pekan', <?php echo $program_1pekan_a; ?>],
+          ['Weekend Tahfizh ', <?php echo $program_weekend_a_tahfizh; ?>],
+          ['Weekend Tahsin ', <?php echo $program_weekend_a_tahsin; ?>]
         ]);
 
         // Set options for Anthony's pie chart.
-        var options = {title:'Persentase program Akhwat Angkatan 43',
+        var options = {title:'Persentase program Akhwat Angkatan <?php echo $this->session->userdata('angkatan');?>',
         				is3D:true,
-                       width:400,
-                       height:300};
+                       width:350,
+                       height:250};
 
         // Instantiate and draw the chart for Anthony's pizza.
         var chart = new google.visualization.PieChart(document.getElementById('akhwat_chart_div'));
@@ -75,109 +73,34 @@
 
 //genap
   // Callback that draws the pie chart for Sarah's pizza.
-      function ikhwan_genap_chart() {
-
-        // Create the data table for Sarah's pizza.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'kategori');
-        data.addColumn('number', 'Slices');
-        data.addRows([
-          ['3 Bulan Mutqin', <?php echo $program_mutqin_ignp; ?>],
-          ['1 Bulan', <?php echo $program_sebulan_ignp; ?>],
-          ['3 Pekan', <?php echo $program_3pekan_ignp; ?>],
-          ['2 Pekan', <?php echo $program_2pekan_ignp; ?>],
-          ['1 Pekan', <?php echo $program_1pekan_ignp; ?>],
-          ['Weekend Tahfizh ', <?php echo $program_weekend_ignp_tahfizh; ?>],
-          ['Weekend Tahsin ', <?php echo $program_weekend_ignp_tahsin; ?>]
-        ]);
-
-        // Set options for Sarah's pie chart.
-        var options = {title:'Persentase program Ikhwan Angkatan 44',
-                       width:400,
-                     is3D: true,
-                       height:300};
-
-        // Instantiate and draw the chart for Sarah's pizza.
-        var chart = new google.visualization.PieChart(document.getElementById('ikhwan_genap_chart_div'));
-        chart.draw(data, options);
-      }
-
-      // Callback that draws the pie chart for Anthony's pizza.
-function akhwat_genap_chart() {
-
-        // Create the data table for Sarah's pizza.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'kategori');
-        data.addColumn('number', 'Slices');
-        data.addRows([
-          ['3 Bulan Mutqin', <?php echo $program_mutqin_agnp; ?>],
-          ['1 Bulan', <?php echo $program_sebulan_agnp; ?>],
-          ['3 Pekan', <?php echo $program_3pekan_agnp; ?>],
-          ['2 Pekan', <?php echo $program_2pekan_agnp; ?>],
-          ['1 Pekan', <?php echo $program_1pekan_agnp; ?>],
-          ['Weekend Tahfizh ', <?php echo $program_weekend_agnp_tahfizh; ?>],
-          ['Weekend Tahsin ', <?php echo $program_weekend_agnp_tahsin; ?>]
-        ]);
-
-        // Set options for Sarah's pie chafrt.
-        var options = {title:'Persentase  Program Akhwat Angkatan 44',
-                       width:400,
-                     is3D: true,
-                       height:300};
-
-        // Instantiate and draw the chart for Sarah's pizza.
-        var chart = new google.visualization.PieChart(document.getElementById('akhwat_genap_chart_div'));
-        chart.draw(data, options);
-      }
+      
 // grafik presentase 
 
 
-      function akhwat_ikhwan_ganjil_chart() { 
+      function akhwat_ikhwan_chart() { 
 
       google.charts.load("current", {packages:["corechart"]});
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Persentaes', 'ikhwan akhwat'],
-          ['Ikhwan',  <?php echo $jumlah_ig;?>],
-          ['Akhwat',    <?php echo $jumlah_ag;?>]
+          ['Ikhwan',  <?php echo $jumlah_i;?>],
+          ['Akhwat',    <?php echo $jumlah_a;?>]
         ]);
 
         var options = {
-          title: 'Persetase Peserta Akhwat Ikhwan Angkatan 43',
-          width: 500, height: 300,
+          title: 'Persetase Peserta Akhwat Ikhwan Angkatan <?php echo $this->session->userdata('angkatan');?>',
+          width: 500, height: 250,
           pieHole: 0.3,
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById('akhwat_ikhwan_ganjil_chart_div'));
+        var chart = new google.visualization.PieChart(document.getElementById('akhwat_ikhwan_chart_div'));
         chart.draw(data, options);
       }
 
      } 
 
-     function akhwat_ikhwan_genap_chart() { 
-        
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Persentaes', 'ikhwan akhwat'],
-          ['Ikhwan',  <?php echo $jumlah_ignp;?>],
-          ['Akhwat',    <?php echo $jumlah_agnp;?>]
-        ]);
-
-        var options = {
-          title: 'Persetase Peserta Akhwat Ikhwan Angkatan 44',
-          width: 500, height: 300,
-          pieHole: 0.3,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('akhwat_ikhwan_genap_chart_div'));
-        chart.draw(data, options);
-      }
-
-     }
-
+     
 
 
 
@@ -234,20 +157,16 @@ body {
 <body>
 
 <h2 class="tengah">Statistik Report Pendaftaran <br>Karantina Tahfihz Al-Qurán Nasional </h2>
-<p class="tengah">Angkatan  43  & 44</p>
-<table align="center"  style="margin-left:20px; margin-bottom: 20px ">
+<h2 class="tengah">Angkatan  <?php echo $this->session->userdata('angkatan');?></h2>
+<table align="center"  style="margin-left:0px; margin-bottom: 20px ">
       <tr>
         <td><div id="ikhwan_chart_div" style="border: 3px solid #99bbff"></div></td>
         <td><div id="akhwat_chart_div" style="border: 3px solid #99bbff"></div></td>       
-        <td><div id="akhwat_ikhwan_ganjil_chart_div" style="border: 3px solid #99bbff"></div></td>       
+        <td><div id="akhwat_ikhwan_chart_div" style="border: 3px solid #99bbff"></div></td>       
         
        </tr>
-       <tr>
-       	<td><div id="ikhwan_genap_chart_div" style="border: 3px solid #99bbff"></div></td>
-        <td><div id="akhwat_genap_chart_div" style="border: 3px solid #99bbff"></div></td>
-          <td><div id="akhwat_ikhwan_genap_chart_div" style="border: 3px solid #99bbff"></div></td> 
-
-       </tr>
+      
+      
     </table>
 
 
@@ -258,19 +177,20 @@ body {
   <div class="column">
 
     <div class="card">
-         <h3>Angkatan 43</h3>
-      <h4>Ikhwan</h4>
-      <p>Total Pendaftar : <?php echo $jumlah_ig; ?> </p>
-      Program : <br>
+        
+      <h2>Ikhwan</h2>
+      <hr>
+      <h3>Total Pendaftar : <?php echo $jumlah_i; ?> </h3>
+      Rincian Program : <br>
 
       	<ul style="text-align: left;">
-      		<li>3 Bulan Mutqin : <?php echo $program_mutqin_ig; ?></li>
-      		<li>Satu Bulan : <?php echo $program_sebulan_ig; ?> </li>
-      		<li>3 Pekan  : <?php echo $program_3pekan_ig; ?></li>
-      		<li>2 Pekan : <?php echo $program_2pekan_ig; ?></li>
-      		<li>1 Pekan  : <?php echo $program_1pekan_ig; ?></li>
-      		<li>Weekend Tahsin: <?php echo $program_weekend_ig_tahsin; ?></li>
-      		<li>Weekend Tahfizh : <?php echo $program_weekend_ig_tahfizh; ?></li>
+      		<li>3 Bulan Mutqin : <?php echo $program_mutqin_i; ?></li>
+      		<li>Satu Bulan : <?php echo $program_sebulan_i; ?> </li>
+      		<li>3 Pekan  : <?php echo $program_3pekan_i; ?></li>
+      		<li>2 Pekan : <?php echo $program_2pekan_i; ?></li>
+      		<li>1 Pekan  : <?php echo $program_1pekan_i; ?></li>
+      		<li>Weekend Tahsin: <?php echo $program_weekend_i_tahsin; ?></li>
+      		<li>Weekend Tahfizh : <?php echo $program_weekend_i_tahfizh; ?></li>
       	</ul>  
  
     </div>
@@ -279,85 +199,46 @@ body {
 
   <div class="column">
     <div class="card">
-   
 
-      <h3>Angkatan 43 </h3>
-      <h4>Akhwat</h4>
-      <p>Total Pendaftar : <?php echo $jumlah_ag; ?> </p>
-      Program : <br>
+    <h2>Akhwat</h2>
+      <hr>
+      <h3>Total Pendaftar : <?php echo $jumlah_a; ?> </h3>
+      Rincian Program : <br>
 
         <ul style="text-align: left;">
-          <li>3 Bulan Mutqin : <?php echo $program_mutqin_ag; ?></li>
-          <li>Satu Bulan : <?php echo $program_sebulan_ag; ?> </li>
-          <li>3 Pekan  : <?php echo $program_3pekan_ag; ?></li>
-          <li>2 Pekan : <?php echo $program_2pekan_ag; ?></li>
-          <li>1 Pekan  : <?php echo $program_1pekan_ag; ?></li>
-          <li>Weekend Tahsin: <?php echo $program_weekend_ag_tahsin; ?></li>
-          <li>Weekend Tahfizh : <?php echo $program_weekend_ag_tahfizh; ?></li>
+          <li>3 Bulan Mutqin : <?php echo $program_mutqin_a; ?></li>
+          <li>Satu Bulan : <?php echo $program_sebulan_a; ?> </li>
+          <li>3 Pekan  : <?php echo $program_3pekan_a; ?></li>
+          <li>2 Pekan : <?php echo $program_2pekan_a; ?></li>
+          <li>1 Pekan  : <?php echo $program_1pekan_a; ?></li>
+          <li>Weekend Tahsin: <?php echo $program_weekend_a_tahsin; ?></li>
+          <li>Weekend Tahfizh : <?php echo $program_weekend_a_tahfizh; ?></li>
         </ul>  
  
     </div>
   </div>
-
-<!-- Genap -->
-<div class="column">
-
-    <div class="card">
-         <h3>Angkatan 44</h3>
-      <h4>Ikhwan</h4>
-      <p>Total Pendaftar : <?php echo $jumlah_ignp; ?> </p>
-      Program : <br>
-
-        <ul style="text-alignpn: left;">
-          <li>3 Bulan Mutqin : <?php echo $program_mutqin_ignp; ?></li>
-          <li>Satu Bulan : <?php echo $program_sebulan_ignp; ?> </li>
-          <li>3 Pekan  : <?php echo $program_3pekan_ignp; ?></li>
-          <li>2 Pekan : <?php echo $program_2pekan_ignp; ?></li>
-          <li>1 Pekan  : <?php echo $program_1pekan_ignp; ?></li>
-          <li>Weekend Tahsin: <?php echo $program_weekend_ignp_tahsin; ?></li>
-          <li>Weekend Tahfizh : <?php echo $program_weekend_ignp_tahfizh; ?></li>
-        </ul>  
- 
-    </div>
-  </div> 
-
-
   <div class="column">
     <div class="card">
-   
+    <h1>  
+        Total Pendaftar : <br>
+        <hr border='1'>
+        <?php echo $total_peserta;?>
+    </h1>
 
-      <h3>Angkatan 44 </h3>
-      <h4>Akhwat</h4>
-      <p>Total Pendaftar : <?php echo $jumlah_agnp; ?> </p>
-      Program : <br>
-
-        <ul style="text-alignpn: left;">
-          <li>3 Bulan Mutqin : <?php echo $program_mutqin_agnp; ?></li>
-          <li>Satu Bulan : <?php echo $program_sebulan_agnp; ?> </li>
-          <li>3 Pekan  : <?php echo $program_3pekan_agnp; ?></li>
-          <li>2 Pekan : <?php echo $program_2pekan_agnp; ?></li>
-          <li>1 Pekan  : <?php echo $program_1pekan_agnp; ?></li>
-          <li>Weekend Tahsin: <?php echo $program_weekend_agnp_tahsin; ?></li>
-          <li>Weekend Tahfizh : <?php echo $program_weekend_agnp_tahfizh; ?></li>
-        </ul>  
+      
  
     </div>
   </div>
 
 
-</div>
- <br>
-<div class="column">
-    <div class="card">
-        <div > Total Peserta angkatan 43 <br> <?php echo $peserta_ganjil?> </div>
-    </div>
+
+  
+
+
 </div>
 
-<div class="column">
-    <div class="card">
-        <div > Total Peserta angkatan 44 <br> <?php echo $peserta_genap?> </div>
-    </div>
-</div>
+
+
 
 </body>
 </html>

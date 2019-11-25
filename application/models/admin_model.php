@@ -10,7 +10,12 @@ class Admin_model extends CI_Model
 
 function daftarpeserta()
 	{
-		return $this->db->get('peserta')->result();
+		$angkatan = $this->session->userdata('angkatan');
+		$this->db->select('*');
+		$this->db->from('peserta');
+		$this->db->where('angkatan',$angkatan);
+
+		return $this->db->get()->result();
 		
 	}
 

@@ -24,9 +24,22 @@
             <label for="psw"><span class="glyphicon glyphicon-user"></span> Email </label>
             <input type="text" class="form-control" id="email" name="email" placeholder="Email">
           </div>
+
           <div class="form-group">
             <label for="Email"><span class="glyphicon glyphicon-lock"></span> Password</label>
             <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+          </div>
+
+          <div class="form-group">
+            <label for="Angkatan"><span class="glyphicon glyphicon-number"></span>Pilih Angkatan</label>
+            <select name='angkatan' class='form-control' >
+                    <option value='43'>43</option>
+                    <option value='44'>44</option>
+                    <option value='45'>45</option>
+                    <option value='46'>46</option>
+                  
+            </select>
+
           </div>
       
       <?php

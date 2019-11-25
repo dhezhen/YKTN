@@ -263,8 +263,10 @@ Saya yang bertanda tangan dibawah ini :
 <tr>
 	<td width=20%>Tempat, Tanggal Lahir <br> </td>
 	<td width=1%>:</td>
-	<td width=45%><?php echo $peserta->tempat_lahir.", ". 
-				$peserta->tanggal_lahir;
+	<td width=45%><?php echo $peserta->tempat_lahir."  ,".
+				date('d F Y', strtotime($peserta->tanggal_lahir))
+				
+
 			?></td>
 </tr>
 <tr>

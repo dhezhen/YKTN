@@ -1,4 +1,4 @@
-<div class="panel panel-info">
+ <div class="panel panel-info">
 	<div class="panel-heading">Form Pendaftaran </div>
 	<div align="center"> Harap email dan password di catat </div>
   <div class="panel-body">
