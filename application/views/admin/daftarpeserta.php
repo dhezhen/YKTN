@@ -1,9 +1,15 @@
-<meta name='viewport' content='width=device-width, initial-scale=1'>
-<script src='<?php echo base_url('assets/fontawesome/js/all.js');?>'></script>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <title>Data Peserta</title>
+    <script src='<?php echo base_url('assets/bootstrap/css/bootstrap.css');?>'></script>
+    <link href="<?php echo base_url().'assets/datatables/css/jquery.dataTables.min.css'?>" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo base_url('assets/fontawesome/css/all.css');?>" />
+</head>
+<body>
+ 
 
-<link rel="stylesheet" href="<?php echo base_url('assets/fontawesome/css/all.css');?>" />
-
-<div class="container">
+<div >
 								<h3 class="header smaller lighter blue"> 
 									Total Peserta angkatan   <?php echo $this->session->userdata('angkatan');?> :<br>
 									  <?PHP echo $total_peserta; ?> Orang
@@ -45,7 +51,7 @@
 					<!--<td><a href="<?php echo site_url('admin/download/'.$peserta->dokumen);?>">Download Lampiran</a></td> -->
 					<td><a href="<?php echo site_url('admin/biodatapeserta/'.$peserta->id_peserta);?>"><i class='fas fa-user' style='font-size:30px color:blue' ></i></a>
 					<a href="<?php echo site_url('admin/editpeserta/'.$peserta->id_peserta);?>"><i class='far fa-edit' style='font-size:15px'></i></a>
-					<a href="<?php echo site_url('admin/hapus_peserta/'.$peserta->id_peserta);?>"><i class='fas fa-trash' style='font-size:30px color:red' ></i></a>
+					<a onclick =" "href="<?php echo site_url('admin/hapus_peserta/'.$peserta->id_peserta);?>"><i class='fas fa-trash' style='font-size:30px color:red' ></i></a>
 					</td>
 					
 				</tr>

@@ -192,7 +192,7 @@
 		<label class="control-label" for="form-field-2">Tempat, Tanggal Lahir</label>
 		<div class="controls">
 <input type="text" id="font" placeholder="Tempat Lahir"   name="tempat_lahir"  />
-<input type="date"  placeholder="Tanggal Lahir"  name="tanggal"  />
+<input type="date"  placeholder="Tanggal Lahir"  name="tanggal_lahir"  />
 
 
 		</div>
@@ -247,7 +247,7 @@
       
       <option value="1 Juz"> 1 Juz</option>
       <option value="2 Juz">2 Juz</option>
-      <option value="3 Juz"> 3 Juz</opti5on>
+      <option value="3 Juz"> 3 Juz</option>
       <option value="4 Juz"> 4 Juz</option>
       <option value="5 Juz"> 5 Juz</option>
       <option value="6 Juz"> 6 Juz</option>

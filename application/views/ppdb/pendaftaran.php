@@ -23,6 +23,14 @@
     </div>
 
 </div>
+
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">No Handphone</label>
+    <div class="col-sm-10">
+      <input type="" class="form-control" name="no_handphone" value="<?php echo set_value('no_handphne')?>" id="inputEmail3" placeholder="No Handphone">
+    </div>
+  </div>
+
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
     <div class="col-sm-10">
@@ -36,6 +44,19 @@
     <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
     <div class="col-sm-10">
       <input type="password" class="form-control" name="password" id="inputPassword3" placeholder="Password">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Pilih Angkatan</label>
+    <div class="col-sm-10">
+      <select name='angkatan'>
+        <option value='44'>44 (tangggal)</option>
+        <option value='45'>45 (tangggal)</option>
+        <option value='46'>46 (tangggal)</option>
+        <option value='47'>47 (tangggal)</option>
+
+      </select>
     </div>
   </div>
   

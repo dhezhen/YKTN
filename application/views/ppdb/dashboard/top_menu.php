@@ -1,3 +1,5 @@
+<link href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css');?>" rel="stylesheet">
+	<link href="<?php echo base_url('assets/bootstrap/css/custom.css');?>" rel="stylesheet">
 <nav class="navbar navbar-inverse">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -26,10 +28,10 @@
 
         
 
-        <li role="separator" class="divider"></li>
+        <!-- <li role="separator" class="divider"></li>
         <li> 
-          <a href="<?php echo site_url('ppdb/pengumuman');?>"> <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>Peserta</a> 
-        </li>
+          <a href="<    ?php echo site_url('ppdb/pengumuman');?>"> <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>Peserta</a> 
+        </li> -->
 
 			<li>
         <a href="<?php echo site_url('ppdb/jadwal');?>"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Arahan Kedatangan </a>

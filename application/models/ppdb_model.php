@@ -54,9 +54,10 @@ class Ppdb_model extends CI_Model
 	
 	function pengumuman()
 	{
+		$angkatan = $this->session->userdata('angkatan');
 		$this->db->select('*');
 		$this->db->from('peserta');
-		$this->db->where('angkatan','43');
+		$this->db->where('angkatan',$angkatan);
 		$this->db->where('status','diverifikasi');
 		$this->db->where('keterangan','LULUS');
 			

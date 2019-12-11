@@ -61,11 +61,12 @@ function daftarpeserta()
 	
 	function pesertabelumdiverifikasi()
 	{
+		$angkatan = $this->session->userdata('angkatan');
 		$this->db->select('*');
 		$this->db->from('peserta');
-		;
+		$this->db->where('angkatan',$angkatan);
 		$this->db->where('status','belum diverifikasi');
-		$this->db->where('angkatan','44');
+		
 		
 		
 		return $this->db->get()->result();
@@ -73,11 +74,13 @@ function daftarpeserta()
 	
 	function pesertatelahverifikasi()
 	{
+		$angkatan = $this->session->userdata('angkatan');
 		$this->db->select('*');
 		$this->db->from('peserta');
+		$this->db->join('pengajar','peserta.id_pengajar=pengajar.id_pengajar');
 		$this->db->order_by('jenis_kelamin asc, nama_lengkap asc, nilai_tahsin desc');
-		$this->db->where('status','diverifikasi');
-		$this->db->where('angkatan','44');
+		$this->db->where('peserta.status','diverifikasi');
+		$this->db->where('peserta.angkatan',$angkatan);
 		
 		return $this->db->get()->result();
 	}

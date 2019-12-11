@@ -1,4 +1,4 @@
-<div class="container">
+
 								<h3 class="header smaller lighter blue">Daftar Keseluruhan Peserta : </h3>
 								<table class="table table-striped table-bordered data">
 			<thead>
@@ -38,4 +38,3 @@
 				?>
 			</tbody>
 		</table>
-	</div>

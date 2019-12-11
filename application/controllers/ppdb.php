@@ -41,6 +41,8 @@ class Ppdb extends CI_Controller
 		$data['nama_lengkap'] = $this->input->post('nama_lengkap',true);
 		$data['email'] = $this->input->post('email',true);
 		$data['password'] = $this->input->post('password',true);
+		$data['no_handphone'] = $this->input->post('no_handphone',true);
+		$data['angkatan'] = $this->input->post('angkatan',true);
 	
 		
 		$email = $this->input->post('email',true);
@@ -50,6 +52,8 @@ class Ppdb extends CI_Controller
 		$this->form_validation->set_rules('nama_lengkap','Nama Lengkap','required');
 		$this->form_validation->set_rules('email','Email','required');
 		$this->form_validation->set_rules('password','Password','required');
+		$this->form_validation->set_rules('angkatan','angkatan','required');
+		$this->form_validation->set_rules('no_handphone','no_handphone','required');
 		
 		
 		if ($this->form_validation->run()==FALSE)
@@ -211,9 +215,9 @@ echo "<script type='text/javascript'>alert('$message');</script>";
 				$data['nama_ayah_arab']=$this->input->post('nama_ayah_arab');
 
 				$data['info_karantina']=$this->input->post('info_karantina');
-				$data['wakaf']=$this->input->post('wakaf');
-				$data['uang_wakaf']=$this->input->post('uang_wakaf');
-				$data['barang_wakaf']=$this->input->post('barang_');
+				// $data['wakaf']=$this->input->post('wakaf');
+				// $data['uang_wakaf']=$this->input->post('uang_wakaf');
+				// $data['barang_wakaf']=$this->input->post('barang_');
 				$data['nilai_tahsin']=$this->input->post('nilai_tahsin');
 				
 				

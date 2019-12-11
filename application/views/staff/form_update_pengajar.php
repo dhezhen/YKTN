@@ -37,15 +37,10 @@
 					</div>
 
     
-		 <?= form_open_multipart('Staff/update_pengajar',['class'=>'form-horizontal']) ?>
+		 <?= form_open_multipart('Staff/update_proses',['class'=>'form-horizontal']) ?>
 		
 
-<!-- <div class="control-group">
-			<label class="control-label" for="form-field-2">Kode Pengajar</label>
-			<div class="controls">
-				<input type="text"  id="font" value="< ?php echo $pengajar->id_pengajar; ?>" readonly name="id_pengajar" />	
-			</div>
-</div> -->
+
 
 <div class="control-group">
 			<label class="control-label" for="form-field-2">Nama Lengkap</label>
@@ -58,9 +53,9 @@
 <div class="control-group">
 		<label class="control-label" for="form-field-3"> Program </label>
 		<div class="controls">
-<select class="form-control" name="program">
+<select class="form-control" name="program_p">
     
-     <option> <?php echo $pengajar->program; ?></option>
+     <option> <?php echo $pengajar->program_p; ?></option>
      <option value="">-Pilih program-</option>
     <option value="3 Bulan Mutqin">3 Bulan Mutqin</option>
      <option value="1 Bulan 30 Juz"> 1 Bulan 30 Juz</option>
@@ -93,8 +88,8 @@
 <div class="control-group">
 			<label class="control-label" for="form-field-2">Jenis Kelamin</label>
 			<div class="controls">
-			<select name='jenis_kelamin'>
-  					<option> <?php echo $pengajar->jenis_kelamin; ?> </option>
+			<select name='jenis_k'>
+  					<option> <?php echo $pengajar->jenis_k; ?> </option>
   					<option> --silahkan pilih-- </option>
   					<option value='L'> Laki - Laki  </option>
   					<option value='P'> Perempuan </option>
@@ -104,9 +99,9 @@
 <div class="control-group">
 			<label class="control-label" for="form-field-2">Status Pernikahan</label>
 			<div class="controls">
-				<select name='status_pernikahan'>
-  					<option ><?php echo $pengajar->status_pernikahan; ?> </>
-  					<option value=''> -silahkan pilih- </>
+				<select name='status_pernikahan_p'>
+  					<option ><?php echo $pengajar->status_pernikahan_p; ?> </>
+  					<option value=''> -silahkan pilih- </> 
   					<option value='Menikah'> Menikah </>
   					<option value='lajang'> Lajang </>
   					<option value='Duda'> Duda </>
@@ -118,22 +113,22 @@
 <div class="control-group">
 			<label class="control-label" for="form-field-2">Tempat, Lahir</label>
 			<div class="controls">
-				<input type="text"  id="font"  placeholder="" value="<?php echo $pengajar->tempat_lahir; ?>" name="tempat_lahir" />	
+				<input type="text"  id="font"  placeholder="" value="<?php echo $pengajar->tempat_lahir_p; ?>" name="tempat_lahir_p" />	
 			</div>
 </div>
 
 <div class="control-group">
 			<label class="control-label" for="form-field-2" >Tanggal Lahir</label>
 			<div class="controls">
-				<input type="date"  id="font" value="<?php echo $pengajar->tanggal_lahir; ?>" placeholder="" name="tanggal_lahir" />	
+				<input type="date"  id="font" value="<?php echo $pengajar->tanggal_lahir_p; ?>" placeholder="" name="tanggal_lahir_p" />	
 			</div>
 </div>
 
 <div class="control-group">
-			<label class="control-label" for="form-field-2">alamat</label>
+			<label class="control-label" for="form-field-2">alamat_p</label>
 			<div class="controls">
-				<textarea name="alamat" placeholder="masukan alamat lengkap">
-				<?php echo $pengajar->alamat; ?>
+				<textarea name="alamat_p" placeholder="masukan alamat_p lengkap">
+				<?php echo $pengajar->alamat_p; ?>
 				</textarea>
 			</div>
 </div>
@@ -141,13 +136,13 @@
 <div class="control-group">
 			<label class="control-label" for="form-field-2">No Handphone</label>
 			<div class="controls">
-			<input type="text"  id="font"  placeholder="" name="no_handphone" value="<?php echo $pengajar->no_handphone; ?>"/>	
+			<input type="text"  id="font"  placeholder="" name="no_hp" value="<?php echo $pengajar->no_hp; ?>"/>	
 
 			</div>
 </div>
 
 <div class="control-group">
-			<label class="control-label" for="form-field-2">Status</label>
+			<label>Status</label>
 			<div class="controls">
 			<select name="status_keaktifan">	
                 <option ><?php echo $pengajar->status_keaktifan;?><option>

@@ -277,9 +277,9 @@ class Admin extends CI_Controller
 				$data['nama_ayah_arab']=$this->input->post('nama_ayah_arab');
 
 				$data['info_karantina']=$this->input->post('info_karantina');
-				$data['wakaf']=$this->input->post('wakaf');
-				$data['uang_wakaf']=$this->input->post('uang_wakaf');
-				$data['barang_wakaf']=$this->input->post('barang_');
+				// $data['wakaf']=$this->input->post('wakaf');
+				// $data['uang_wakaf']=$this->input->post('uang_wakaf');
+				// $data['barang_wakaf']=$this->input->post('barang_');
 		
 				
 				
@@ -298,10 +298,10 @@ class Admin extends CI_Controller
 			
 			$this->admin_model->up_biodata($id_peserta,$data);
 			$data2['peserta'] = $this->admin_model->select_by_id($id_peserta);
-			$this->session->set_flashdata('info','Dokumen telah berhasil diupdate');
+			$this->session->set_flashdata('info','Data telah berhasil diupdate');
 			
-			
-				redirect('admin/editpeserta/'.$id_peserta);
+			redirect('admin/daftarpeserta');
+
 		}
 	
 		else
@@ -523,6 +523,7 @@ function proses_update_nilai()
 		}
 	}
 
+
 	function update_pembayaran()
 	{
 		$logged_in = $this->session->userdata('logged_in');
@@ -539,8 +540,7 @@ function proses_update_nilai()
 			$this->admin_model->up_biodata($id_peserta,$data);
 			$data2['peserta'] = $this->admin_model->select_by_id($id_peserta);
 			$this->session->set_flashdata('info','Dokumen telah berhasil diupdate');
-			
-			
+					
 			redirect('admin/keuangan');
 		}
  			else{

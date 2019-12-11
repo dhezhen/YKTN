@@ -170,8 +170,8 @@
 			<select name="jenis_kelamin">
 				<option><?php echo $peserta->jenis_kelamin; ?></option>
 				<option >Pilih Jenis Kelamin</option>
-				<option value="Laki - Laki"> Laki - Laki </option>
-				<option value="Perempuan">Perempuan </option>
+				<option value="L"> Laki - Laki </option>
+				<option value="P">Perempuan </option>
 
 
 			</select>

@@ -1,6 +1,6 @@
 
 
-<div class="jumbotron">
+<div>
   <h1>Selamat Datang, <?php echo $peserta->nama_lengkap;?>! </h1>
   <p>Jika anda belum melengkapi biodata, silahkan melengkapinya dengan mengklik <b>Biodata</b> dibawah ini</p>
   <p><a class="btn btn-primary btn-lg" href="<?php echo site_url('ppdb/update_biodata/'.$this->session->userdata('id_peserta'));?>" role="button">Biodata</a></p>

@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	
-	<title>SISINFO YKTN</title>
+	<title>SISINFO YKTN || ANGKATAN KE <?PHP ECHO $this->session->userdata('angkatan');?></title>
 	
 	<link href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css');?>" rel="stylesheet">
 	<link href="<?php echo base_url('assets/bootstrap/css/custom.css');?>" rel="stylesheet">

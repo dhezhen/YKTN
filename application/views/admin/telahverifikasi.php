@@ -5,7 +5,6 @@
 
 
 
-<div class="container">
 
 
 								<h3 class="header smaller lighter blue">Peserta Yang Telah Verifikasi : <?php echo $jumlah;?></h3>
@@ -19,6 +18,7 @@
 				<tr>			
 					<th>Angkatan</th>
 					<th>No Pendaftaran</th>
+					<th>No Program</th>
 					<th>Nama Lengkap</th>
 					<th>Jenis Kelamin</th>
 					<th>Asal Kota</th>
@@ -36,6 +36,7 @@
 				<tr>
 					<td><?php echo $peserta->angkatan;?></td>
 					<td><?php echo $peserta->id_peserta;?></td>
+					<td><?php echo $peserta->program;?></td>
 					<td><?php echo $peserta->nama_lengkap;?></td>
 					<td><?php echo $peserta->jenis_kelamin;?></td>
 					<td><?php echo $peserta->kabupaten."-".$peserta->provinsi;?></td>

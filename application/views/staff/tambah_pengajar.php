@@ -54,17 +54,15 @@
 <div class="control-group">
 		<label class="control-label" for="form-field-3"> Program </label>
 		<div class="controls">
-	<select class="form-control" name="program">
-    
-     <option>-Pilih program-</option>
-    <option value="3 Bulan Mutqin">3 Bulan Mutqin</option>
-     <option value="1 Bulan 30 Juz"> 1 Bulan 30 Juz</option>
-     <option value="3 Pekan 15 Juz">3 Pekan 15 Juz </option>
-     <option value="2 Pekan 10 Juz">2 Pekan 10 Juz</option>
-     <option value="weekend 1 Juz">Weekend 1 Juz</option>
-     <option value="weekend Tahsin Tuntas">weekend Tahsin Tuntas</option>
-    
-      </select>
+	<select class="control" name="program_p">
+		<option>-Pilih program-</option>
+		<option value="3 Bulan Mutqin">3 Bulan Mutqin</option>
+		<option value="1 Bulan 30 Juz"> 1 Bulan 30 Juz</option>
+		<option value="3 Pekan 15 Juz">3 Pekan 15 Juz </option>
+		<option value="2 Pekan 10 Juz">2 Pekan 10 Juz</option>
+		<option value="weekend 1 Juz">Weekend 1 Juz</option>
+		<option value="weekend Tahsin Tuntas">weekend Tahsin Tuntas</option>
+    </select>
 </div>
 </div>
 
@@ -88,7 +86,7 @@
 <div class="control-group">
 			<label class="control-label" for="form-field-2">Jenis Kelamin</label>
 			<div class="controls">
-			<select name='jenis_kelamin'>
+			<select name='jenis_k'>
   					<option value=''> --silahkan pilih-- </>
   					<option value='L'> Laki - Laki  </>
   					<option value='P'> Perempuan </>
@@ -98,7 +96,7 @@
 <div class="control-group">
 			<label class="control-label" for="form-field-2">Status Pernikahan</label>
 			<div class="controls">
-				<select name='status_pernikahan'>
+				<select name='status_pernikahan_p'>
   					<option value=''> -silahkan pilih- </>
   					<option value='Menikah'> Menikah </>
   					<option value='lajang'> Lajang </>
@@ -111,28 +109,28 @@
 <div class="control-group">
 			<label class="control-label" for="form-field-2">Tempat, Lahir</label>
 			<div class="controls">
-				<input type="text"  id="font"  placeholder="" name="tempat_lahir" />	
+				<input type="text"  id="font"  placeholder="" name="tempat_lahir_p" />	
 			</div>
 </div>
 
 <div class="control-group">
 			<label class="control-label" for="form-field-2">Tanggal Lahir</label>
 			<div class="controls">
-				<input type="date"  id="font"  placeholder="" name="tanggal_lahir" />	
+				<input type="date"  id="font"  placeholder="" name="tanggal_lahir_p" />	
 			</div>
 </div>
 
 <div class="control-group">
 			<label class="control-label" for="form-field-2">alamat</label>
 			<div class="controls">
-				<textarea name='alamat' value='masukan alamat rumah'></textarea>
+				<textarea name='alamat_p' value='masukan alamat rumah'></textarea>
 			</div>
 </div>
 
 <div class="control-group">
 			<label class="control-label" for="form-field-2">No Handphone</label>
 			<div class="controls">
-			<input type="text"  id="font"  placeholder="" name="no_handphone" />	
+			<input type="text"  id="font"  placeholder="" name="no_hp" />	
 
 			</div>
 </div>

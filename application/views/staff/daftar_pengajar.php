@@ -24,11 +24,12 @@ Tambah Pengajar
         <tr>      
           <th>Kode pengajar</th>
           <th>Nama Lengkap</th>
+          <th>Usia</th>
           <th>Angkatan</th>
           <th>Program </th>
           <th>Jenis Kelamin</th>
           <th>No Handphone</th>
-          <th>Foto</th>
+       <!--    <th>Foto</th> -->
           <th>Status</th>
           <th >aksi</a></th>
           
@@ -44,11 +45,12 @@ Tambah Pengajar
         <tr>
           <td><?php echo $p->id_pengajar;?></td>
           <td><?php echo $p->nama_p;?></td>
+          <td><?php echo $p->usia_p;?></td>
           <td><?php echo $p->angkatan;?></td>
-          <td><?php echo $p->program; ?></td>
-          <td><?php echo $p->jenis_kelamin; ?></td>
-          <td><?php echo $p->no_handphone;?></td>
-          <td><img style="width:75px; height: 75px"src="<?php echo base_url().'uploads/pengajar/'.$p->foto_diri ?>"> </td>
+          <td><?php echo $p->program_p;?></td>
+          <td><?php echo $p->jenis_k; ?></td>
+          <td><?php echo $p->no_hp;?></td>
+          <!-- <td><img style="width:75px; height: 75px"src="< php echo base_url().'uploads/pengajar/'.$p->foto_diri ?>"> </td> -->
           <td><?php echo $p->status_keaktifan;?></td>
 
 

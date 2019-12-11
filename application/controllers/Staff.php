@@ -34,16 +34,16 @@ class Staff extends CI_Controller
         }      
     }
 
-    function muhaffizh()
+    function halaqoh_ikhwan()
 	{
 		$logged_in = $this->session->userdata('logged_in');
 		$level = $this->session->userdata('level');
 		if (!empty($logged_in) && $level=='admin')
 		{
-			$muhaffizh = $this->Staff_model->daftar_muhaffizh();
-			$data['jumlah'] = count($muhaffizh);
-			$data['muhaffizh'] = $this->Staff_model->daftar_muhaffizh();
-			$this->template->admin('staff/muhaffizh',$data);
+			$data_peserta_ikhwan = $this->Staff_model->daftar_halaqoh_ikhwan();
+			$data['jumlah'] = count($data_peserta_ikhwan);
+			$data['peserta_ikhwan'] = $this->Staff_model->daftar_halaqoh_ikhwan();
+			$this->template->admin('staff/halaqoh_ikhwan',$data);
 		}
 		else
 		{
@@ -52,14 +52,14 @@ class Staff extends CI_Controller
     }
     
     
-    function muhaffizhah(){
+    function halaqoh_akhwat(){
         $logged_in = $this->session->userdata('logged_in');
         $level = $this->session->userdata('level');
         if (!empty($logged_in) && $level=='admin'){
-            $muhaffizhah = $this->Staff_model->daftar_muhaffizhah();
-            $data['jumlah'] = count($muhaffizhah);
-            $data['muhaffizhah'] = $muhaffizhah;
-            $this->template->admin('staff/muhaffizhah',$data);     
+            $data_peserta_akhwat = $this->Staff_model->daftar_halaqoh_akhwat();
+            $data['jumlah'] = count($data_peserta_akhwat);
+            $data['peserta_akhwat'] = $data_peserta_akhwat;
+            $this->template->admin('staff/halaqoh_akhwat',$data);     
         }
         else 
         {
@@ -107,16 +107,16 @@ class Staff extends CI_Controller
 
 
 				$gambar = $this->upload->data();
-				
+				$data['program_p'] = $this->input->post('program_p');
 				$data['nama_p']=$this->input->post('nama_p');			
-				$data['tempat_lahir']=$this->input->post('tempat_lahir');			
-				$data['tanggal_lahir']=$this->input->post('tanggal_lahir');			
-                $data['jenis_kelamin']=$this->input->post('jenis_kelamin');
-                $data['alamat']=$this->input->post('alamat');
+				$data['tempat_lahir_p']=$this->input->post('tempat_lahir_p');			
+				$data['tanggal_lahir_p']=$this->input->post('tanggal_lahir_p');			
+                $data['jenis_k']=$this->input->post('jenis_k');
+                $data['alamat_p']=$this->input->post('alamat_p');
                 $data['angkatan']=$this->input->post('angkatan');
-                $data['status_pernikahan']=$this->input->post('status_pernikahan');
+                $data['status_pernikahan_p']=$this->input->post('status_pernikahan_p');
                 $data['status_keaktifan']=$this->input->post('status_keaktifan');
-                $data['no_handphone']=$this->input->post('no_handphone');
+                $data['no_hp']=$this->input->post('no_hp');
 				$data['foto_diri'] = $gambar['file_name'];
                 
 				
@@ -127,7 +127,7 @@ class Staff extends CI_Controller
 						$today = new DateTime();
 						$diff = $today->diff($biday);		
 			
-			$data['usia']=$diff->y;
+			$data['usia_p']=$diff->y;
 			
 			
 			
@@ -142,52 +142,146 @@ class Staff extends CI_Controller
 			
 	}
 
-    function update($id_pengajar){
-        $logged_in = $this->session->userdata('logged_in');
-        $level = $this->session->userdata('level');
-		if (!empty($logged_in) && $level=='admin')
-		{
-            $data['pengajar'] = $this->Staff_model->select_by_id($id_pengajar);
-			$this->template->admin('staff/form_update_pengajar',$data);
-        }
-    }
 
-	function update_pengajar()
+	function update_muhaffizhah ($id_peserta){
+		$logged_in = $this->session->userdata('logged_in');
+		$level	   = $this->session->userdata('level');
+		if (!empty($logged_in)&& $level=='admin'){
+			$data['peserta'] = $this->Staff_model->select_by_id_peserta($id_peserta);
+			$data['pengajar'] = $this->Staff_model->daftar_muhaffizhah();
+			$this->template->admin('staff/form_update_muhaffizhah',$data);
+		}
+	}
+	function proses_update_muhaffizhah()
 	{
 		$logged_in = $this->session->userdata('logged_in');
 		$level = $this->session->userdata('level');
 		if (!empty($logged_in) && $level=='admin')
 		{
 		
-			$data['nama_p']=$this->input->post('nama_p');			
-				$data['tempat_lahir']=$this->input->post('tempat_lahir');			
-				$data['tanggal_lahir']=$this->input->post('tanggal_lahir');			
+					
+			$data['id_pengajar']=$this->input->post('id_pengajar');	
+			$id_peserta=$this->input->post('id_peserta');
+			
+			$this->Staff_model->update_muhaffizhah($id_peserta,$data);
+			$data2['peserta'] = $this->Staff_model->select_by_id($id_peserta);
+			$this->session->set_flashdata('info','Data telah berhasil diupdate');
+			
+			
+			redirect('staff/halaqoh_akhwat');
+		}
+ 			else{
+ 					$this->template->home('home/content');
+
+ 			}		
+	
+		}
+	function update_muhaffizh($id_peserta){
+		$logged_in = $this->session->userdata('logged_in');
+        $level = $this->session->userdata('level');
+		if (!empty($logged_in) && $level=='admin')
+		{
+
+			//$id_pengajar = $this->input->post('id_pengajar');
+            $data['peserta'] = $this->Staff_model->select_by_id_peserta($id_peserta);
+            $data['pengajar'] = $this->Staff_model->daftar_muhaffizh();
+			$this->template->admin('staff/form_update_muhaffizh',$data);
+        }
+		
+	}
+
+	function proses_update_muhaffizh()
+	{
+		$logged_in = $this->session->userdata('logged_in');
+		$level = $this->session->userdata('level');
+		if (!empty($logged_in) && $level=='admin')
+		{
+		
+					
+			$data['id_pengajar']=$this->input->post('id_pengajar');	
+			$id_peserta=$this->input->post('id_peserta');
+			
+			$this->Staff_model->update_muhaffizh($id_peserta,$data);
+			$data2['peserta'] = $this->Staff_model->select_by_id($id_peserta);
+			$this->session->set_flashdata('info','Data telah berhasil diupdate');
+			
+			
+			redirect('staff/halaqoh_ikhwan');
+		}
+ 			else{
+ 					$this->template->home('home/content');
+
+ 			}		
+	
+		}
+
+
+    function update($id_pengajar){
+        $logged_in = $this->session->userdata('logged_in');
+        $level = $this->session->userdata('level');
+		if (!empty($logged_in) && $level=='admin')
+		{
+
+			//$id_pengajar = $this->input->post('id_pengajar');
+            $data['pengajar'] = $this->Staff_model->select_by_id($id_pengajar);
+			$this->template->admin('staff/form_update_pengajar',$data);
+        }
+	}
+	
+
+
+	function update_proses()
+	{
+		$logged_in = $this->session->userdata('logged_in');
+		$level = $this->session->userdata('level');
+		if (!empty($logged_in) && $level=='admin')
+		{
+			$config['upload_path'] = './uploads/pengajar/';
+			$config['allowed_types'] = 'jpg|jpeg|png';
+			$config['max_size'] = 12000;
+			$config['max_width']=12000;
+			$config['max_height'] = 12000;
+
+			$this->load->library('upload',$config);
+
+			if (!$this->upload->do_upload())
+			{
+				$id_peserta = $this->session->userdata('id_peserta');
+				$this->session->set_flashdata('info','Foto Gagal');
+				redirect('staff/update'.$id_pengajar);
+			} else{
+
+				$gambar = $this->upload->data();
+				$data['program_p'] = $this->input->post('program_p');
+				$data['nama_p']=$this->input->post('nama_p');			
+				$data['tempat_lahir_p']=$this->input->post('tempat_lahir_p');			
+				$data['tanggal_lahir_p']=$this->input->post('tanggal_lahir_p');			
+                $data['jenis_k']=$this->input->post('jenis_k');
+                $data['alamat_p']=$this->input->post('alamat_p');
                 $data['angkatan']=$this->input->post('angkatan');
-                $data['jenis_kelamin']=$this->input->post('jenis_kelamin');
-                $data['alamat']=$this->input->post('alamat');
-                $data['program']=$this->input->post('program');
-                $data['status_pernikahan']=$this->input->post('status_pernikahan');
+                $data['status_pernikahan_p']=$this->input->post('status_pernikahan_p');
                 $data['status_keaktifan']=$this->input->post('status_keaktifan');
-                $data['no_handphone']=$this->input->post('no_handphone');
+                $data['no_hp']=$this->input->post('no_hp');
 				$data['foto_diri'] = $gambar['file_name'];
                 
 				
-						$birthday = $this->input->post('tanggal_lahir');
+						$birthday = $this->input->post('tanggal_lahir_p');
 						
 						// Convert Ke Date Time
 						$biday = new DateTime($birthday);
 						$today = new DateTime();
 						$diff = $today->diff($biday);		
 			
-			$data['usia']=$diff->y;
+			$data['usia_p']=$diff->y;
 			
-			
+			$id_pengajar = $this->input->post('id_pengajar');
 			$this->Staff_model->update_biodata($id_pengajar,$data);
 			$data2['pengajar'] = $this->Staff_model->select_by_id($id_pengajar);
 			$this->session->set_flashdata('info','Data telah berhasil diupdate');
 					
 			redirect('staff/daftar_pengajar');
 		}
+	}
  			else{
  					$this->template->home('home/content');
 
