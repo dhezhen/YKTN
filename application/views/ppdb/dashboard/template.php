@@ -27,7 +27,7 @@
 					<br/>
 					<h2><p align="right">Yayasan Karantina Tahfizh Al-Quran Nasional</p></h2>
 					<h5><p align="right">Jl. Baru Obyek Wisata Cibulan Rt. 17 Rw. 04 Maniskidul – Jalaksana, Kuningan Jawa barat 45554</p></h5>
-					<h5><p align="right">E-mail:hafalquransebulan@gmail.com</p></h5>
+					<h5><p align="right">e-mail:hafalquransebulan@gmail.com</p></h5>
 			</div>
 		</div>
 		</div>

@@ -53,59 +53,59 @@
                             <?php 
                              $no = 0  ;
                              $no++;
-                            foreach ($peserta_ikhwan as $pi) 
+                            foreach ($peserta_ikhwan as $peserta) 
                                 { 
 
                                 
                                   
                                     ?>
                                 <td bgcolor="#e0dedc"><?php echo $no++;?></td>
-                                <td  align="Left"><?php echo $pi->nama_lengkap;?></td>
+                                <td  align="Left"><?php echo $peserta->nama_lengkap;?></td>
                            
-                                <td><?php echo $pi->h1;?></td>
-                                <td><?php echo $pi->h2;?></td>
-                                <td><?php echo $pi->h3;?></td>
-                                <td><?php echo $pi->h4;?></td>
-                                <td><?php echo $pi->h5;?></td>
-                                <td><?php echo $pi->h6;?></td>
-                                <td><?php echo $pi->h7;?></td>
-                                <td><?php echo $pi->h8;?></td>
-                                <td><?php echo $pi->h9;?></td>
-                                <td><?php echo $pi->h10;?></td>
-                                <td><?php echo $pi->h11;?></td>
-                                <td><?php echo $pi->h12;?></td>
-                                <td><?php echo $pi->h13;?></td>
-                                <td><?php echo $pi->h14;?></td>
-                                <td><?php echo $pi->h15;?></td>
-                                <td><?php echo $pi->h16;?></td>
-                                <td><?php echo $pi->h17;?></td>
-                                <td><?php echo $pi->h18;?></td>
-                                <td><?php echo $pi->h19;?></td>
-                                <td><?php echo $pi->h20;?></td>
-                                <td><?php echo $pi->h21;?></td>
-                                <td><?php echo $pi->h22;?></td>
-                                <td><?php echo $pi->h23;?></td>
-                                <td><?php echo $pi->h24;?></td>
-                                <td><?php echo $pi->h25;?></td>
-                                <td><?php echo $pi->h26;?></td>
-                                <td><?php echo $pi->h27;?></td>
-                                <td><?php echo $pi->h28;?></td>
-                                <td><?php echo $pi->h29;?></td>
-                                <td><?php echo $pi->h30;?></td>
-                                <td><?php echo $pi->h31;?></td>
-                                <td><?php echo $pi->h32;?></td>
-                                <td><?php echo $pi->h33;?></td>
-                                <td><?php echo $pi->h34;?></td>
+                                <td><?php echo $peserta->h1;?></td>
+                                <td><?php echo $peserta->h2;?></td>
+                                <td><?php echo $peserta->h3;?></td>
+                                <td><?php echo $peserta->h4;?></td>
+                                <td><?php echo $peserta->h5;?></td>
+                                <td><?php echo $peserta->h6;?></td>
+                                <td><?php echo $peserta->h7;?></td>
+                                <td><?php echo $peserta->h8;?></td>
+                                <td><?php echo $peserta->h9;?></td>
+                                <td><?php echo $peserta->h10;?></td>
+                                <td><?php echo $peserta->h11;?></td>
+                                <td><?php echo $peserta->h12;?></td>
+                                <td><?php echo $peserta->h13;?></td>
+                                <td><?php echo $peserta->h14;?></td>
+                                <td><?php echo $peserta->h15;?></td>
+                                <td><?php echo $peserta->h16;?></td>
+                                <td><?php echo $peserta->h17;?></td>
+                                <td><?php echo $peserta->h18;?></td>
+                                <td><?php echo $peserta->h19;?></td>
+                                <td><?php echo $peserta->h20;?></td>
+                                <td><?php echo $peserta->h21;?></td>
+                                <td><?php echo $peserta->h22;?></td>
+                                <td><?php echo $peserta->h23;?></td>
+                                <td><?php echo $peserta->h24;?></td>
+                                <td><?php echo $peserta->h25;?></td>
+                                <td><?php echo $peserta->h26;?></td>
+                                <td><?php echo $peserta->h27;?></td>
+                                <td><?php echo $peserta->h28;?></td>
+                                <td><?php echo $peserta->h29;?></td>
+                                <td><?php echo $peserta->h30;?></td>
+                                <td><?php echo $peserta->h31;?></td>
+                                <td><?php echo $peserta->h32;?></td>
+                                <td><?php echo $peserta->h33;?></td>
+                                <td><?php echo $peserta->h34;?></td>
 								
 
 							
 								<td colspan='2'> 
                                     <?php 
                                     $total= 
-                                    $pi->h1+$pi->h2+$pi->h3+$pi->h4+$pi->h5+$pi->h6+$pi->h7+$pi->h8+$pi->h9+$pi->h10+
-                                    $pi->h11+$pi->h12+$pi->h13+$pi->h14+$pi->h15+$pi->h16+$pi->h17+$pi->h18+$pi->h19+$pi->h20+
-                                    $pi->h21+$pi->h22+$pi->h23+$pi->h24+$pi->h25+$pi->h26+$pi->h27+$pi->h28+$pi->h29+$pi->h30+
-                                    $pi->h31+$pi->h32+$pi->h33+$pi->h34;
+                                    $peserta->h1+$peserta->h2+$peserta->h3+$peserta->h4+$peserta->h5+$peserta->h6+$peserta->h7+$peserta->h8+$peserta->h9+$peserta->h10+
+                                    $peserta->h11+$peserta->h12+$peserta->h13+$peserta->h14+$peserta->h15+$peserta->h16+$peserta->h17+$peserta->h18+$peserta->h19+$peserta->h20+
+                                    $peserta->h21+$peserta->h22+$peserta->h23+$peserta->h24+$peserta->h25+$peserta->h26+$peserta->h27+$peserta->h28+$peserta->h29+$peserta->h30+
+                                    $peserta->h31+$peserta->h32+$peserta->h33+$peserta->h34;
                                     
                                     echo $total;
                                     echo " halaman";
@@ -152,45 +152,45 @@
                         <?php 
                          $no = 0  ;
                          $no++;
-                        foreach ($peserta_ikhwan as $pi) 
+                        foreach ($peserta_ikhwan as $peserta) 
                             { 
 
                             
                               
                                 ?>
                             <td bgcolor="#e0dedc"><?php echo $no++;?></td>
-                            <td  align="Left"><?php echo $pi->nama_lengkap;?></td>
+                            <td  align="Left"><?php echo $peserta->nama_lengkap;?></td>
                        
-                            <td><?php echo $pi->j1;?></td>
-                            <td><?php echo $pi->j2;?></td>
-                            <td><?php echo $pi->j3;?></td>
-                            <td><?php echo $pi->j4;?></td>
-                            <td><?php echo $pi->j5;?></td>
-                            <td><?php echo $pi->j6;?></td>
-                            <td><?php echo $pi->j7;?></td>
-                            <td><?php echo $pi->j8;?></td>
-                            <td><?php echo $pi->j9;?></td>
-                            <td><?php echo $pi->j10;?></td>
-                            <td><?php echo $pi->j11;?></td>
-                            <td><?php echo $pi->j12;?></td>
-                            <td><?php echo $pi->j13;?></td>
-                            <td><?php echo $pi->j14;?></td>
-                            <td><?php echo $pi->j15;?></td>
-                            <td><?php echo $pi->j16;?></td>
-                            <td><?php echo $pi->j17;?></td>
-                            <td><?php echo $pi->j18;?></td>
-                            <td><?php echo $pi->j19;?></td>
-                            <td><?php echo $pi->j20;?></td>
-                            <td><?php echo $pi->j21;?></td>
-                            <td><?php echo $pi->j22;?></td>
-                            <td><?php echo $pi->j23;?></td>
-                            <td><?php echo $pi->j24;?></td>
-                            <td><?php echo $pi->j25;?></td>
-                            <td><?php echo $pi->j26;?></td>
-                            <td><?php echo $pi->j27;?></td>
-                            <td><?php echo $pi->j28;?></td>
-                            <td><?php echo $pi->j29;?></td>
-                            <td><?php echo $pi->j30;?></td>
+                            <td><?php echo $peserta->j1;?></td>
+                            <td><?php echo $peserta->j2;?></td>
+                            <td><?php echo $peserta->j3;?></td>
+                            <td><?php echo $peserta->j4;?></td>
+                            <td><?php echo $peserta->j5;?></td>
+                            <td><?php echo $peserta->j6;?></td>
+                            <td><?php echo $peserta->j7;?></td>
+                            <td><?php echo $peserta->j8;?></td>
+                            <td><?php echo $peserta->j9;?></td>
+                            <td><?php echo $peserta->j10;?></td>
+                            <td><?php echo $peserta->j11;?></td>
+                            <td><?php echo $peserta->j12;?></td>
+                            <td><?php echo $peserta->j13;?></td>
+                            <td><?php echo $peserta->j14;?></td>
+                            <td><?php echo $peserta->j15;?></td>
+                            <td><?php echo $peserta->j16;?></td>
+                            <td><?php echo $peserta->j17;?></td>
+                            <td><?php echo $peserta->j18;?></td>
+                            <td><?php echo $peserta->j19;?></td>
+                            <td><?php echo $peserta->j20;?></td>
+                            <td><?php echo $peserta->j21;?></td>
+                            <td><?php echo $peserta->j22;?></td>
+                            <td><?php echo $peserta->j23;?></td>
+                            <td><?php echo $peserta->j24;?></td>
+                            <td><?php echo $peserta->j25;?></td>
+                            <td><?php echo $peserta->j26;?></td>
+                            <td><?php echo $peserta->j27;?></td>
+                            <td><?php echo $peserta->j28;?></td>
+                            <td><?php echo $peserta->j29;?></td>
+                            <td><?php echo $peserta->j30;?></td>
                       
                             
 
@@ -198,9 +198,9 @@
                             <td colspan='2'> 
                                 <?php 
                                 $total= 
-                                $pi->j1+$pi->j2+$pi->j3+$pi->j4+$pi->j5+$pi->j6+$pi->j7+$pi->j8+$pi->j9+$pi->j10+
-                                $pi->j11+$pi->j12+$pi->j13+$pi->j14+$pi->j15+$pi->j16+$pi->j17+$pi->j18+$pi->j19+$pi->j20+
-                                $pi->j21+$pi->j22+$pi->j23+$pi->j24+$pi->j25+$pi->j26+$pi->j27+$pi->j28+$pi->j29+$pi->j30;
+                                $peserta->j1+$peserta->j2+$peserta->j3+$peserta->j4+$peserta->j5+$peserta->j6+$peserta->j7+$peserta->j8+$peserta->j9+$peserta->j10+
+                                $peserta->j11+$peserta->j12+$peserta->j13+$peserta->j14+$peserta->j15+$peserta->j16+$peserta->j17+$peserta->j18+$peserta->j19+$peserta->j20+
+                                $peserta->j21+$peserta->j22+$peserta->j23+$peserta->j24+$peserta->j25+$peserta->j26+$peserta->j27+$peserta->j28+$peserta->j29+$peserta->j30;
                               
                                 
                                 echo $total;

@@ -14,11 +14,14 @@ class Template
 		$data['_header']=$this->_ci->load->view('home/header',$data,true);
 		$data['_top_menu']=$this->_ci->load->view('home/top_menu',$data,true);
 		$data['_login']=$this->_ci->load->view('home/login',$data,true);
+		$data['_login2']=$this->_ci->load->view('pengajar/home/login',$data,true);
+		
 		//$data['_menu2']=$this->_ci->load->view('home/menu2',$data,true);
-		$data['_kontak']=$this->_ci->load->view('home/kontak',$data,true);
+		//$data['_kontak']=$this->_ci->load->view('home/kontak',$data,true);
 		$data['_footer']=$this->_ci->load->view('home/footer',$data,true);
 		$this->_ci->load->view('home/template.php',$data);
 	}
+
 	
 	function ppdb($content,$data=null)
 	{
@@ -41,4 +44,12 @@ class Template
 		$data['_sidebar']=$this->_ci->load->view('admin/sidebar',$data,true);
 		$this->_ci->load->view('admin/template',$data);
 	}
+
+	function pengajar($content,$data=null){
+		$data['_content']= $this->_ci->load->view($content,$data,true);
+		$data['_sidebar']=$this->_ci->load->view('pengajar/sidebar',$data,true);
+		$data['_top_menu']=$this->_ci->load->view('Pengajar/top_menu',$data,true);
+		$this->_ci->load->view('pengajar/template',$data);
+	}
 }
+

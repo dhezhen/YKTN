@@ -24,7 +24,7 @@
 				<div align="center">
 					<img style="width:100px;height: 100px;" src="<?php echo base_url('assets/images/logo.png');?>">
 				</div>
-				<div class="col-md-5 col-md-offset-3">
+				<div >
 					<br/>
 					<h2><p align="center">Yayasan Karantina Tahfizh Al-Quran Nasional</p></h2>
 					<h4><p align="center" font-style="italic">Jl. Baru Obyek Wisata Cibulan Rt. 17 Rw. 04 Maniskidul – Jalaksana, Kuningan Jawa barat 45554</p>

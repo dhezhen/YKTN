@@ -17,9 +17,9 @@ Tambah Pengajar
 
 </a></button>
 
-<div >
+<div>
                 <h3 class="header smaller lighter blue">Jumlah Pengajar : <?php echo $jumlah;?></h3>
-                <table class="table table-striped table-bordered data">
+ <table class="table table-striped table-bordered data">
       <thead>
         <tr>      
           <th>Kode pengajar</th>

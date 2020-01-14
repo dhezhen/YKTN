@@ -321,20 +321,20 @@ function proses_update_nilai()
 		{
 		
 					
-			$data['nilai_tahsin']=$this->input->post('nilai_tahsin');	
-			$id_peserta=$this->input->post('id_peserta');
-			
-			$this->admin_model->up_biodata($id_peserta,$data);
-			$data2['peserta'] = $this->admin_model->select_by_id($id_peserta);
-			$this->session->set_flashdata('info','Dokumen telah berhasil diupdate');
-			
-			
-			redirect('admin/belumdiverifikasi/');
-		}
- 			else{
- 					$this->template->home('home/content');
+				$data['nilai_tahsin']=$this->input->post('nilai_tahsin');	
+				$id_peserta=$this->input->post('id_peserta');
+				
+				$this->admin_model->up_biodata($id_peserta,$data);
+				$data2['peserta'] = $this->admin_model->select_by_id($id_peserta);
+				$this->session->set_flashdata('info','Dokumen telah berhasil diupdate');
+				
+				
+				redirect('admin/belumdiverifikasi/');
+			}
+				else{
+						$this->template->home('home/content');
 
- 			}		
+				}		
 	
 		}
 

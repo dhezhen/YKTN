@@ -50,7 +50,7 @@
 					<td><img style="width:75px; height: 75px"src="<?php echo base_url() .'uploads/Dokumen/'.$peserta->foto_diri ?>"> </td>
 					<!--<td><a href="<?php echo site_url('admin/download/'.$peserta->dokumen);?>">Download Lampiran</a></td> -->
 					<td><a href="<?php echo site_url('admin/biodatapeserta/'.$peserta->id_peserta);?>"><i class='fas fa-user' style='font-size:30px color:blue' ></i></a>
-					<a href="<?php echo site_url('admin/editpeserta/'.$peserta->id_peserta);?>"><i class='far fa-edit' style='font-size:15px'></i></a>
+				<a href="<?php echo site_url('admin/editpeserta/'.$peserta->id_peserta);?>"><i class='far fa-edit' style='font-size:15px'></i></a>
 					<a onclick =" "href="<?php echo site_url('admin/hapus_peserta/'.$peserta->id_peserta);?>"><i class='fas fa-trash' style='font-size:30px color:red' ></i></a>
 					</td>
 					

@@ -17,6 +17,38 @@ class Staff extends CI_Controller
 		$this->load->helper('url');
 	}
 
+
+	function login()
+	 {
+	// 	$email = $this->input->post('email',true);
+	// 	$password = $this->input->post('password',true);
+		$pengajar = $this->input->post('pengajar',true);
+		$id_pengajar = $this->input->post('id_pengajar',true);
+		$angkatan = $this->input->post('angkatan',true);
+		
+		$akun = $this->admin_model->cek_akun($email,$password);
+		$temp_account = count($akun);
+		
+		if ($temp_account > 0)
+		{
+			$data = array(
+							'level'=>$akun->level,
+							'angkatan'=>$angkatan,
+							'logged_in'=>true
+			);
+			
+			$this->session->set_userdata($data);
+		$this->session->set_flashdata('succes', "anda berhasil Login");
+			redirect('admin/beranda');
+
+			//$this->template->admin('admin/beranda');
+		}
+		else
+		{
+			$this->template->home('home/login');
+		}
+	}
+
     function daftar_pengajar()
 	{
 		$logged_in = $this->session->userdata('logged_in');
