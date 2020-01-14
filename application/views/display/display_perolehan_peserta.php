@@ -9,7 +9,7 @@
   <h3>DISPLAY PEROLEHAN PESERTA</h3>
     <H4>
         KARANTINA TAHFIZH AL-QUR'AN NASIONAL <BR>
-        ANGKATAN KE <?PHP ECHO '__'?>
+        ANGKATAN KE <?PHP ECHO $this->session->userdata('angkatan');?>
     </H4>
 
   <div class="w3-bar w3-iceblue" >
@@ -19,34 +19,27 @@
     <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'akhwat_perjuz')">Akhwat (Perjuz)</button>
   </div>
   
-  <div id="ikhwan_harian" class="w3-container w3-border city">
-  <table style="font-size: 9pt; text-align: center; border-color: skyblue" border='2' width="100%">
-						
-							<tr>
-                           
-                          
-								<td colspan="36" bgcolor="#ccffcc" > <h4>Perolehan Perhari</h4>
-								<td rowspan='2'> <h4 >Total </h4>
-                                </td>
-                            
-								<tr align="center">
-                                    <td rowspans='2' bgcolor="#e0dedc" >No </td>
-									<td bgcolor="#e0dedc">Hari Ke - </td> 
-								    <td bgcolor="#e0dedc">_1</td><td bgcolor="#e0dedc">_2</td><td bgcolor="#e0dedc">_3</td><td bgcolor="#e0dedc">_4</td><td bgcolor="#e0dedc">_5</td>
-									<td bgcolor="#e0dedc">_6</td><td bgcolor="#e0dedc">_7</td><td bgcolor="#e0dedc">_8</td><td bgcolor="#e0dedc">_9</td><td bgcolor="#e0dedc">10</td>
-									<td bgcolor="#e0dedc">11</td><td bgcolor="#e0dedc">12</td><td bgcolor="#e0dedc">13</td><td bgcolor="#e0dedc">14</td><td bgcolor="#e0dedc">15</td>
-									<td bgcolor="#e0dedc">16</td><td bgcolor="#e0dedc">17</td><td bgcolor="#e0dedc">18</td><td bgcolor="#e0dedc">19</td><td bgcolor="#e0dedc">20</td>
-									<td bgcolor="#e0dedc">21</td><td bgcolor="#e0dedc">22</td><td bgcolor="#e0dedc">23</td><td bgcolor="#e0dedc">24</td><td bgcolor="#e0dedc">25</td>
-									<td bgcolor="#e0dedc">26</td><td bgcolor="#e0dedc">27</td><td bgcolor="#e0dedc">28</td><td bgcolor="#e0dedc">29</td><td bgcolor="#e0dedc">30</td>
-									<td bgcolor="#e0dedc">31</td>
-									<td bgcolor="#e0dedc">32</td>
-									<td bgcolor="#e0dedc">33</td>
-										
-								</tr>
-							</tr>
-
-							<tr>
-
+  <div id="ikhwan_harian" class="w3-container w3-border city"style="overflow-x:auto;width='75%'">
+  <h4>PEROLEHAN IKHWAN HARIAN </h4>
+  <table class="table table-striped table-bordered data">
+		  <thead>
+            
+        <th>No </th>
+        <th>Nama</th>
+         <th>1</th>
+        <th>2</th><th>3</th><th>4</th><th>5</th>
+        <th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
+        <th>11</th><th>12</th><th>13</th><th>14</th><th>15</th>
+        <th>16</th><th>17</th><th>18</th><th>19</th><th>20</th>
+        <th>21</th><th>22</th><th>23</th><th>24</th><th>25</th>
+        <th>26</th><th>27</th><th>28</th><th>29</th><th>30</th>
+        <th>31</th>
+        <th>32</th>
+        <th>33</th>
+        <th>34</th>
+        <th>Total (Halaman)</th>       
+                                                                                                                                                                                        
+      </thead>
                          
                            
                            
@@ -59,7 +52,8 @@
                                 
                                   
                                     ?>
-                                <td bgcolor="#e0dedc"><?php echo $no++;?></td>
+                                    <tr>
+                                <td><?php echo $no++;?></td>
                                 <td  align="Left"><?php echo $peserta->nama_lengkap;?></td>
                            
                                 <td><?php echo $peserta->h1;?></td>
@@ -99,7 +93,7 @@
 								
 
 							
-								<td colspan='2'> 
+								<td> 
                                     <?php 
                                     $total= 
                                     $peserta->h1+$peserta->h2+$peserta->h3+$peserta->h4+$peserta->h5+$peserta->h6+$peserta->h7+$peserta->h8+$peserta->h9+$peserta->h10+
@@ -108,8 +102,7 @@
                                     $peserta->h31+$peserta->h32+$peserta->h33+$peserta->h34;
                                     
                                     echo $total;
-                                    echo " halaman";
-                                    ?>
+                                       ?>
 
 
                                 </td>
@@ -131,14 +124,14 @@
                             </td>
                         
                             <tr align="center">
-                                <td rowspans='2' bgcolor="#e0dedc" >No </td>
-                                <td bgcolor="#e0dedc">Juz Ke - </td> 
-                                <td bgcolor="#e0dedc">_1</td><td bgcolor="#e0dedc">_2</td><td bgcolor="#e0dedc">_3</td><td bgcolor="#e0dedc">_4</td><td bgcolor="#e0dedc">_5</td>
-                                <td bgcolor="#e0dedc">_6</td><td bgcolor="#e0dedc">_7</td><td bgcolor="#e0dedc">_8</td><td bgcolor="#e0dedc">_9</td><td bgcolor="#e0dedc">10</td>
-                                <td bgcolor="#e0dedc">11</td><td bgcolor="#e0dedc">12</td><td bgcolor="#e0dedc">13</td><td bgcolor="#e0dedc">14</td><td bgcolor="#e0dedc">15</td>
-                                <td bgcolor="#e0dedc">16</td><td bgcolor="#e0dedc">17</td><td bgcolor="#e0dedc">18</td><td bgcolor="#e0dedc">19</td><td bgcolor="#e0dedc">20</td>
-                                <td bgcolor="#e0dedc">21</td><td bgcolor="#e0dedc">22</td><td bgcolor="#e0dedc">23</td><td bgcolor="#e0dedc">24</td><td bgcolor="#e0dedc">25</td>
-                                <td bgcolor="#e0dedc">26</td><td bgcolor="#e0dedc">27</td><td bgcolor="#e0dedc">28</td><td bgcolor="#e0dedc">29</td><td bgcolor="#e0dedc">30</td>
+                                <td rowspans='2' >No </td>
+                                <td>Juz Ke - </td> 
+                                <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+                                <td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
+                                <td>11</td><td>12</td><td>13</td><td>14</td><td>15</td>
+                                <td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
+                                <td>21</td><td>22</td><td>23</td><td>24</td><td>25</td>
+                                <td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
                               
                                     
                             </tr>
@@ -158,7 +151,7 @@
                             
                               
                                 ?>
-                            <td bgcolor="#e0dedc"><?php echo $no++;?></td>
+                            <td><?php echo $no++;?></td>
                             <td  align="Left"><?php echo $peserta->nama_lengkap;?></td>
                        
                             <td><?php echo $peserta->j1;?></td>
@@ -216,34 +209,26 @@
                 </table>
   </div>
   
-  <div id="akhwat_harian" class="w3-container w3-border city" style="display:none">
-  <table style="font-size: 9pt; text-align: center; border-color: skyblue" border='2' width="100%">
-						
-                        <tr>
-                       
-                      
-                            <td colspan="36" bgcolor="#ccffcc" > <h4>Perolehan Perhari</h4>
-                            <td rowspan='2'> <h4 >Total </h4>
-                            </td>
-                        
-                            <tr align="center">
-                                <td rowspans='2' bgcolor="#e0dedc" >No </td>
-                                <td bgcolor="#e0dedc">Hari Ke - </td> 
-                                <td bgcolor="#e0dedc">_1</td><td bgcolor="#e0dedc">_2</td><td bgcolor="#e0dedc">_3</td><td bgcolor="#e0dedc">_4</td><td bgcolor="#e0dedc">_5</td>
-                                <td bgcolor="#e0dedc">_6</td><td bgcolor="#e0dedc">_7</td><td bgcolor="#e0dedc">_8</td><td bgcolor="#e0dedc">_9</td><td bgcolor="#e0dedc">10</td>
-                                <td bgcolor="#e0dedc">11</td><td bgcolor="#e0dedc">12</td><td bgcolor="#e0dedc">13</td><td bgcolor="#e0dedc">14</td><td bgcolor="#e0dedc">15</td>
-                                <td bgcolor="#e0dedc">16</td><td bgcolor="#e0dedc">17</td><td bgcolor="#e0dedc">18</td><td bgcolor="#e0dedc">19</td><td bgcolor="#e0dedc">20</td>
-                                <td bgcolor="#e0dedc">21</td><td bgcolor="#e0dedc">22</td><td bgcolor="#e0dedc">23</td><td bgcolor="#e0dedc">24</td><td bgcolor="#e0dedc">25</td>
-                                <td bgcolor="#e0dedc">26</td><td bgcolor="#e0dedc">27</td><td bgcolor="#e0dedc">28</td><td bgcolor="#e0dedc">29</td><td bgcolor="#e0dedc">30</td>
-                                <td bgcolor="#e0dedc">31</td>
-                                <td bgcolor="#e0dedc">32</td>
-                                <td bgcolor="#e0dedc">33</td>
-                                    
-                            </tr>
-                        </tr>
-
-                        <tr>
-
+  <div id="akhwat_harian" class="w3-container w3-border city" style="overflow-x:auto; display:none;">
+  <h4> PEROLEHAN AKHWAT HARIAN</h4>
+  <table class="table table-striped table-bordered data">
+	 <thead>
+        <th>No </th>
+        <th>Nama</th>
+        <th>1</th>
+        <th>2</th><th>3</th><th>4</th><th>5</th>
+        <th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
+        <th>11</th><th>12</th><th>13</th><th>14</th><th>15</th>
+        <th>16</th><th>17</th><th>18</th><th>19</th><th>20</th>
+        <th>21</th><th>22</th><th>23</th><th>24</th><th>25</th>
+        <th>26</th><th>27</th><th>28</th><th>29</th><th>30</th>
+        <th>31</th>
+        <th>32</th>
+        <th>33</th>
+        <th>34</th>
+        <th>Total (Halaman)</th>       
+                                                                                                                                                                                        
+      </thead>
                      
                        
                        
@@ -256,7 +241,7 @@
                             
                               
                                 ?>
-                            <td bgcolor="#e0dedc"><?php echo $no++;?></td>
+                            <td><?php echo $no++;?></td>
                             <td  align="Left"><?php echo $pa->nama_lengkap;?></td>
                        
                             <td><?php echo $pa->h1;?></td>
@@ -328,14 +313,14 @@
                             </td>
                         
                             <tr align="center">
-                                <td rowspans='2' bgcolor="#e0dedc" >No </td>
-                                <td bgcolor="#e0dedc">Juz Ke - </td> 
-                                <td bgcolor="#e0dedc">_1</td><td bgcolor="#e0dedc">_2</td><td bgcolor="#e0dedc">_3</td><td bgcolor="#e0dedc">_4</td><td bgcolor="#e0dedc">_5</td>
-                                <td bgcolor="#e0dedc">_6</td><td bgcolor="#e0dedc">_7</td><td bgcolor="#e0dedc">_8</td><td bgcolor="#e0dedc">_9</td><td bgcolor="#e0dedc">10</td>
-                                <td bgcolor="#e0dedc">11</td><td bgcolor="#e0dedc">12</td><td bgcolor="#e0dedc">13</td><td bgcolor="#e0dedc">14</td><td bgcolor="#e0dedc">15</td>
-                                <td bgcolor="#e0dedc">16</td><td bgcolor="#e0dedc">17</td><td bgcolor="#e0dedc">18</td><td bgcolor="#e0dedc">19</td><td bgcolor="#e0dedc">20</td>
-                                <td bgcolor="#e0dedc">21</td><td bgcolor="#e0dedc">22</td><td bgcolor="#e0dedc">23</td><td bgcolor="#e0dedc">24</td><td bgcolor="#e0dedc">25</td>
-                                <td bgcolor="#e0dedc">26</td><td bgcolor="#e0dedc">27</td><td bgcolor="#e0dedc">28</td><td bgcolor="#e0dedc">29</td><td bgcolor="#e0dedc">30</td>
+                                <td rowspans='2' >No </td>
+                                <td>Juz Ke - </td> 
+                                <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+                                <td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
+                                <td>11</td><td>12</td><td>13</td><td>14</td><td>15</td>
+                                <td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
+                                <td>21</td><td>22</td><td>23</td><td>24</td><td>25</td>
+                                <td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
                            
                                     
                             </tr>
@@ -355,7 +340,7 @@
                             
                               
                                 ?>
-                            <td bgcolor="#e0dedc"><?php echo $no++;?></td>
+                            <td><?php echo $no++;?></td>
                             <td  align="Left"><?php echo $pa->nama_lengkap;?></td>
                        
                             <td><?php echo $pa->j1;?></td>
