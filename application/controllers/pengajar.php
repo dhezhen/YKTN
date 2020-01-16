@@ -48,8 +48,9 @@ class Pengajar extends CI_Controller
 		else
 
 		{
-			$message = "Maaf,Email atau password salah";
-			echo "<script type='text/javascript'>alert('$message');</script>";
+			// $message = "Maaf,Email atau password salah";
+			// echo "<script type='text/javascript'>alert('$message');</script>";
+
 			$data['peserta']= $this->pengajar_model->peserta_halaqoh();;
 			$data['pengajar'] = $this->Staff_model->daftar_pengajar();
 			//redirect('pengajar/home/beranda');
@@ -71,8 +72,6 @@ class Pengajar extends CI_Controller
 		$data['peserta_juz']= $this->pengajar_model->peserta_halaqoh();
 		$this->template->pengajar('pengajar/beranda',$data);
 
-
-	
 	}
 
 	function perolehan_hari($id_peserta){
@@ -219,7 +218,69 @@ class Pengajar extends CI_Controller
 	
 		}	
 
+	function data_peserta (){
+			$logged_in = $this->session->userdata('logged_in');
+			$level = $this->session->userdata('level');
+			if (!empty($logged_in)&& $level=='pengajar'){
+				$data['peserta']= $this->pengajar_model->peserta_halaqoh();
+				$data['jumlah'] = count('peserta');
+				$data['peserta_juz']= $this->pengajar_model->peserta_halaqoh();
+				$this->template->pengajar('pengajar/data_peserta',$data);
+			
+		}
+		else 
+		{
+			$data['pengajar'] = $this->Staff_model->daftar_pengajar();
+			//redirect('pengajar/home/beranda');
+			$this->load->view('pengajar/home/login',$data);
+		}
+	}
 
+function verifikasi_syahadah($id_peserta){ 
+	$logged_in = $this->session->userdata('logged_in');
+	$level = $this->session->userdata('level');
+	if (!empty($logged_in)&& $level=='pengajar')
+	{
+			$data['peserta'] = $this->pengajar_model->select_by_id($id_peserta);
+			$this->template->pengajar('pengajar/verifikasi_peserta',$data);
+
+	}else{
+				$data['peserta']= $this->pengajar_model->peserta_halaqoh();
+				$data['peserta_juz']= $this->pengajar_model->peserta_halaqoh();
+				$this->template->pengajar('pengajar/beranda',$data);
+
+
+	}
+}
+function proses_edit()
+{
+	$logged_in = $this->session->userdata('logged_in');
+	$level = $this->session->userdata('level');
+	if (!empty($logged_in)&& $level=='pengajar'){
+
+		$data['program']=$this->input->post('program');
+		$data['nama_lengkap']=$this->input->post('nama_lengkap');
+		$data['nama_syahadah']=$this->input->post('nama_syahadah');
+		$data['tempat_lahir']=$this->input->post('tempat_lahir');
+		$data['tanggal_lahir']=$this->input->post('tanggal_lahir');
+		$data['kabupaten']=$this->input->post('kabupaten');
+		$data['provinsi']=$this->input->post('provinsi');
+		$data['perolehan']=$this->input->post('perolehan');
+		$data['nilai_syahadah']=$this->input->post('nilai_syahadah');
+		$id_peserta = $this->input->post('id_peserta');
+
+		$this->pengajar_model->up_biodata($id_peserta,$data);
+
+		$data2['peserta'] = $this->pengajar_model->select_by_id($id_peserta);
+		$this->session->set_flashdata('info','Dokumen telah berhasil diupdate');
+		redirect('pengajar/data_peserta',$data2);
+
+	}
+	else
+	{
+
+	}
+}
 	
 
 	/*

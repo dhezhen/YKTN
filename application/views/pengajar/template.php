@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>Admin Area</title>
+		<title>Muhaffizh/ah Area</title>
 
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -98,29 +98,7 @@
 			</div>
 
 			<div class="main-content">
-				<div class="breadcrumbs" id="breadcrumbs">
-					<ul class="breadcrumb">
-						<li>
-							<i class="icon-home home-icon"></i>
-							<a href="#">Home</a>
-
-							<span class="divider">
-								<i class="icon-angle-right arrow-icon"></i>
-							</span>
-						</li>
-
-						<li>
-							<a href="#">Other Pages</a>
-
-							<span class="divider">
-								<i class="icon-angle-right arrow-icon"></i>
-							</span>
-						</li>
-						<li class="active">Blank Page</li>
-					</ul><!--.breadcrumb-->
-
-					
-				</div>
+				
 
 				<div class="page-content">
 					<div class="row-fluid">

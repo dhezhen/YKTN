@@ -14,13 +14,13 @@
 
 					
 					<li class="">
-						<a href="<?php echo site_url('pengajar/Verifikasi_syahadah');?>">
+						<a href="<?php echo site_url('pengajar/data_peserta');?>">
 							<i class="icon-user"></i>
-							<span class="menu-text"> Verifikasi Syahadah</span>
+							<span class="menu-text"> Verifikasi </span>
 						</a>
 					</li>
 				
-
+</ul>
 					
 					<!--
 					<li>

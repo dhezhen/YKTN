@@ -28,7 +28,14 @@
 		
 		
 		return $this->db->get()->result();
-	}
+    }
+    function daftar_peserta(){
+        $this->db->select('*');
+        $this->db->from('peserta');
+        return $this->db->get()->result();
+        
+    }
+ 
     function select_by_id($id_peserta)
 	{
 		$this->db->select('*');

@@ -22,6 +22,7 @@
 			<thead>
 				<tr>			
 					<!-- <th>No Registrasi</th> -->
+					<th>No</th>
 					<th>Angkatan</th>
 					<th>Program </th>
 					<th>Nama Lengkap</th>
@@ -35,11 +36,18 @@
 				</tr>
 			</thead>
 			<tbody>
-				<?php foreach ($peserta as $peserta)
+			<?php 
+				$no=0; 
+				$no++;
+					
+					foreach ($peserta as $peserta)
+
+
 				{
 				?>
 				<tr>
-					<!--<td><?php echo $peserta->id_peserta;?></td>-->
+					<!--<td>< ?php echo $peserta->id_peserta;?></td>-->
+					<td><?php echo $no++;?></td>
 					<td><?php echo $peserta->angkatan;?></td>
 					<td><?php echo $peserta->program;?></td>
 					<td><?php echo $peserta->nama_lengkap;?></td>

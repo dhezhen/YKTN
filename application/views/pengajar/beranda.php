@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-<title>Perolehan</title>
+<title>Perolehan Peserta</title>
     </head>
 <!--     <style>
 table {
@@ -25,7 +25,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
   <h3>DISPLAY PEROLEHAN PESERTA</h3>
     <H4>
         KARANTINA TAHFIZH AL-QUR'AN NASIONAL <BR>
-        KAHALQOH Ust./ustd <br> 
+        KHALQOH Ust./ustd <br> 
         <b> <?PHP ECHO $this->session->userdata('nama_p') ?> </b>
     </H4>
     <?php

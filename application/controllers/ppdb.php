@@ -43,6 +43,8 @@ class Ppdb extends CI_Controller
 		$data['password'] = $this->input->post('password',true);
 		$data['no_handphone'] = $this->input->post('no_handphone',true);
 		$data['angkatan'] = $this->input->post('angkatan',true);
+		$data['program'] = $this->input->post('program',true);
+		$data['jenis_kelamin'] = $this->input->post('jenis_kelamin',true);
 	
 		
 		$email = $this->input->post('email',true);
