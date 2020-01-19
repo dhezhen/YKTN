@@ -94,7 +94,7 @@
 
 			<div class="main-content">
 				<div class="breadcrumbs" id="breadcrumbs">
-					<ul class="breadcrumb">
+					<!-- <ul class="breadcrumb">
 						<li>
 							<i class="icon-home home-icon"></i>
 							<a href="#">Home</a>
@@ -112,7 +112,7 @@
 							</span>
 						</li>
 						<li class="active">Blank Page</li>
-					</ul><!--.breadcrumb-->
+					</ul>.breadcrumb -->
 
 					
 				</div>

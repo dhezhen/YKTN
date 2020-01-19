@@ -66,8 +66,8 @@ $spreadsheet->setActiveSheetIndex(0)
 ->setCellValue('T1', 'PROVINSI')
 ->setCellValue('U1', 'KEWARGANEGARAAN')
 ->setCellValue('V1', 'NO HP')
-->setCellValue('X1', 'NO DARURAT')
-->setCellValue('Y1', 'UKURAN BAJU')
+->setCellValue('W1', 'NO DARURAT')
+->setCellValue('X1', 'UKURAN BAJU')
 
 ;
 
@@ -94,11 +94,11 @@ $spreadsheet->setActiveSheetIndex(0)
 ->setCellValue('Q'.$i, $peserta->status_pernikahan)
 ->setCellValue('R'.$i, $peserta->alamat)
 ->setCellValue('S'.$i, $peserta->kabupaten)
-->setCellValue('U'.$i, $peserta->provinsi)
-->setCellValue('V'.$i, $peserta->kewarganegaraan)
-->setCellValue('W'.$i, $peserta->no_handphone)
-->setCellValue('X'.$i, $peserta->no_darurat)
-->setCellValue('Y'.$i, $peserta->ukuran_baju);
+->setCellValue('T'.$i, $peserta->provinsi)
+->setCellValue('U'.$i, $peserta->kewarganegaraan)
+->setCellValue('V'.$i, $peserta->no_handphone)
+->setCellValue('W'.$i, $peserta->no_darurat)
+->setCellValue('X'.$i, $peserta->ukuran_baju);
 
 $i++;
 }

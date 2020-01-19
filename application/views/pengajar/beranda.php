@@ -22,19 +22,20 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 <body>
 
 <div class="w3-container" align='center'>
-  <h3>DISPLAY PEROLEHAN PESERTA</h3>
-    <H4>
-        KARANTINA TAHFIZH AL-QUR'AN NASIONAL <BR>
-        KHALQOH Ust./ustd <br> 
-        <b> <?PHP ECHO $this->session->userdata('nama_p') ?> </b>
-    </H4>
-    <?php
+<?php
   $info = $this->session->flashdata('info');
   if (!empty($info))
   {
     echo $info;
   }
   ?>
+  <h3>DISPLAY PEROLEHAN PESERTA</h3>
+    <H4>
+        KARANTINA TAHFIZH AL-QUR'AN NASIONAL <BR>
+        KHALQOH Ust./ustd <br> 
+        <b> <?PHP ECHO $this->session->userdata('nama_p') ?> </b>
+    </H4>
+  
   <div class="w3-bar w3-iceblue" >
     <button class="w3-bar-item w3-button tablink w3-blue" onclick="openCity(event,'peserta_harian')">Perolehan Harian</button>
     <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'peserta_perjuz')">peserta Perjuz</button>

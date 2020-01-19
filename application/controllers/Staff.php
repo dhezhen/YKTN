@@ -248,10 +248,6 @@ class Staff extends CI_Controller
 		}
 
 
-
-		
-	
-/* 
     function update($id_pengajar){
         $logged_in = $this->session->userdata('logged_in');
         $level = $this->session->userdata('level');
@@ -262,18 +258,8 @@ class Staff extends CI_Controller
             $data['pengajar'] = $this->Staff_model->select_by_id($id_pengajar);
 			$this->template->admin('staff/form_update_pengajar',$data);
         }
-	} */
-	
-	function update($id_pengajar){
-
-		$logged_in = $this->session->userdata('logged_in');
-		$level = $this->session->userdata('level');
-		if (!empty($logged_in) && $level=='admin')
-		{
-			$data['pengajar'] = $this->Staff_model->select_by_id($id_pengajar);
-			$this->template->admin('staff/form_update_pengajar',$data);
-		}
 	}
+	
 
 
 	function update_proses()
@@ -292,7 +278,7 @@ class Staff extends CI_Controller
 
 			if (!$this->upload->do_upload())
 			{
-				$id_pengajar = $this->session->userdata('id_pengajar');
+				$id_pengajar = $this->input->post('id_pengajar');
 				$this->session->set_flashdata('info','Foto Gagal');
 				redirect('staff/update/'.$id_pengajar);
 			} else{

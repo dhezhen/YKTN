@@ -7,7 +7,7 @@
 
 <link rel="stylesheet" type="text/css" href="http://www.arabic-keyboard.org/keyboard/keyboard.css"> 
   <script type="text/javascript" src="http://www.arabic-keyboard.org/keyboard/keyboard.js" charset="UTF-8"></script> 
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <style type="text/css">
 	
 #font{

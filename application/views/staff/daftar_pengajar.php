@@ -3,9 +3,39 @@
     <meta charset="utf-8">
     <title>Data Pengajar</title>
     <script src='<?php echo base_url('assets/bootstrap/css/bootstrap.css');?>'></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <link href="<?php echo base_url().'assets/datatables/css/jquery.dataTables.min.css'?>" rel="stylesheet">
+    
     <link rel="stylesheet" href="<?php echo base_url('assets/fontawesome/css/all.css');?>" />
 </head>
+<script type="text/javascript">
+	var url="<?php  echo site_url('staff/delete/'.$p->id_pengajar);?>";
+	function hapus() {
+			
+Swal.fire({
+  title: 'Hapus Data ',
+  text: "Apakah Anda Yakin!",
+  icon: 'warning',
+
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Ya, Hapus Data'
+}).then((result) => {
+	if (result.value) {
+		
+		Swal.fire(
+		  'Berhasil',
+		  'Data telah Dihapus',
+		  'success'
+		  )
+		  location.href = url;
+		  }
+})} 
+</script>
+
+
+
 <body>
  
 
@@ -54,8 +84,8 @@ Tambah Pengajar
           <td><?php echo $p->status_keaktifan;?></td>
 
 
-          <td><a href="<?php echo site_url('staff/update/'.$p->id_pengajar);?>" >update</a>
-            <a href="<?php echo site_url('staff/delete/'.$p->id_pengajar);?>" > hapus</a>
+          <td><a href="<?php echo site_url('staff/update/'.$p->id_pengajar);?>" ><i class='fas fa-edit' style='font-size:20px; color:blue' ></i></a>
+					<a href="javascript:void(0);"  onclick='hapus()' href="<?php echo site_url('admin/hapus_peserta/'.$p->id_pengajar);?>"><i class='fas fa-trash' style='font-size:20px; color:red' ></i></a>
           </td>
         </tr>
         <?php

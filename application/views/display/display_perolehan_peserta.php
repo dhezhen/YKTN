@@ -26,7 +26,7 @@
             
         <th>No </th>
         <th>Nama</th>
-         <th>1</th>
+        <th>1</th>
         <th>2</th><th>3</th><th>4</th><th>5</th>
         <th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
         <th>11</th><th>12</th><th>13</th><th>14</th><th>15</th>
@@ -113,32 +113,24 @@
 					</table>
   </div>
 
-  <div id="ikhwan_perjuz" class="w3-container w3-border city" style="display:none">
-  <table style="font-size: 9pt; text-align: center; border-color: skyblue" border='2' width="100%">
+  <div id="ikhwan_perjuz" class="w3-container w3-border city" style="display:none;overflow-x:auto;width:'75%'" >
+  <h4>PEROLEHAN IKHWAN PERJUZ </h4>
+  <table class="table table-striped table-bordered data">
 						
-                        <tr>
-                       
-                      
-                            <td colspan="33" bgcolor="#ccffcc" > <h4>Perolehan Perjuz</h4>
-                            <td rowspan='2'> <h4 >Total </h4>
-                            </td>
-                        
-                            <tr align="center">
-                                <td rowspans='2' >No </td>
-                                <td>Juz Ke - </td> 
-                                <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
-                                <td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
-                                <td>11</td><td>12</td><td>13</td><td>14</td><td>15</td>
-                                <td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
-                                <td>21</td><td>22</td><td>23</td><td>24</td><td>25</td>
-                                <td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
-                              
-                                    
-                            </tr>
-                        </tr>
-
-                        <tr>
-
+  <thead>
+            
+            <th>No </th>
+            <th>Nama</th>
+            <th>1</th>
+            <th>2</th><th>3</th><th>4</th><th>5</th>
+            <th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
+            <th>11</th><th>12</th><th>13</th><th>14</th><th>15</th>
+            <th>16</th><th>17</th><th>18</th><th>19</th><th>20</th>
+            <th>21</th><th>22</th><th>23</th><th>24</th><th>25</th>
+            <th>26</th><th>27</th><th>28</th><th>29</th><th>30</th>
+            <th>Total (Juz)</th>       
+                                                                                                                                                                                            
+     </thead>
                      
                        
                        
@@ -188,7 +180,7 @@
                             
 
                         
-                            <td colspan='2'> 
+                            <td> 
                                 <?php 
                                 $total= 
                                 $peserta->j1+$peserta->j2+$peserta->j3+$peserta->j4+$peserta->j5+$peserta->j6+$peserta->j7+$peserta->j8+$peserta->j9+$peserta->j10+
@@ -196,8 +188,7 @@
                                 $peserta->j21+$peserta->j22+$peserta->j23+$peserta->j24+$peserta->j25+$peserta->j26+$peserta->j27+$peserta->j28+$peserta->j29+$peserta->j30;
                               
                                 
-                                echo $total;
-                                echo "Juz";
+                                echo $total." Juz";
                                 ?>
 
 
@@ -302,33 +293,23 @@
                 </table>
   </div>
 
-  <div id="akhwat_perjuz" class="w3-container w3-border city" style="display:none">
-  <table style="font-size: 9pt; text-align: center; border-color: skyblue" border='2' width="100%">
-						
-                        <tr>
-                       
-                      
-                            <td colspan="33" bgcolor="#ccffcc" > <h4>Perolehan Perjuz</h4>
-                            <td rowspan='2'> <h4 >Total </h4>
-                            </td>
-                        
-                            <tr align="center">
-                                <td rowspans='2' >No </td>
-                                <td>Juz Ke - </td> 
-                                <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
-                                <td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
-                                <td>11</td><td>12</td><td>13</td><td>14</td><td>15</td>
-                                <td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
-                                <td>21</td><td>22</td><td>23</td><td>24</td><td>25</td>
-                                <td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
-                           
-                                    
-                            </tr>
-                        </tr>
-
-                        <tr>
-
-                     
+  <div id="akhwat_perjuz" class="w3-container w3-border city" style="display:none;overflow-x:auto;width:'75%'">
+  <h4> PEROLEHAN AKHWAT PERJUZ</h4>
+  <table class="table table-striped table-bordered data">
+  <thead>
+            
+            <th>No </th>
+            <th>Nama</th>
+            <th>1</th>
+            <th>2</th><th>3</th><th>4</th><th>5</th>
+            <th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
+            <th>11</th><th>12</th><th>13</th><th>14</th><th>15</th>
+            <th>16</th><th>17</th><th>18</th><th>19</th><th>20</th>
+            <th>21</th><th>22</th><th>23</th><th>24</th><th>25</th>
+            <th>26</th><th>27</th><th>28</th><th>29</th><th>30</th>
+            <th>Total (Juz)</th>       
+                                                                                                                                                                                            
+     </thead>
                        
                        
                         <?php 
@@ -385,8 +366,7 @@
                                 $pa->j21+$pa->j22+$pa->j23+$pa->j24+$pa->j25+$pa->j26+$pa->j27+$pa->j28+$pa->j29+$pa->j30;
                               
                                 
-                                echo $total;
-                                echo "Juz";
+                                echo $total." Juz";
                                 ?>
 
 

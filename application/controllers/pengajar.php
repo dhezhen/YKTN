@@ -91,6 +91,7 @@ class Pengajar extends CI_Controller
 		if (!empty($logged_in) && $level=='pengajar')
 		{
 			$data['peserta'] = $this->pengajar_model->select_by_id($id_peserta);
+			$this->session->set_flashdata('error','<div class="alert alert-success" role="alert">Data berhasil di update</div>');
 			$this->template->pengajar('pengajar/update_perolehan_juz',$data);
 		}
 	}
@@ -143,7 +144,7 @@ class Pengajar extends CI_Controller
 				
 			$data['peserta']= $this->pengajar_model->peserta_halaqoh();
 			$data['peserta_juz']= $this->pengajar_model->peserta_halaqoh();
-			$this->session->set_flashdata('info','Dokumen telah berhasil diupdate');
+			$this->session->set_flashdata('error','<div class="alert alert-success" role="alert">Data berhasil di update</div>');
 			$this->template->pengajar('pengajar/beranda',$data);
 			
 			
@@ -202,7 +203,7 @@ class Pengajar extends CI_Controller
 				
 			$data['peserta']= $this->pengajar_model->peserta_halaqoh();
 			$data['peserta_juz']= $this->pengajar_model->peserta_halaqoh();
-			$this->session->set_flashdata('info','Dokumen telah berhasil diupdate');
+			$this->session->set_flashdata('error','<div class="alert alert-success" role="alert">Data berhasil di update</div>');
 			$this->template->pengajar('pengajar/beranda',$data);
 			
 			
@@ -272,7 +273,9 @@ function proses_edit()
 		$this->pengajar_model->up_biodata($id_peserta,$data);
 
 		$data2['peserta'] = $this->pengajar_model->select_by_id($id_peserta);
+		
 		$this->session->set_flashdata('info','Dokumen telah berhasil diupdate');
+
 		redirect('pengajar/data_peserta',$data2);
 
 	}

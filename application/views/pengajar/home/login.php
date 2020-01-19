@@ -26,6 +26,7 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/util.css')?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/main.css')?>">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <!--===============================================================================================-->
 </head>
 <body>

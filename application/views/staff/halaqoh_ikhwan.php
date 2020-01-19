@@ -6,6 +6,13 @@
 
 
 <div class="container">
+	
+<?php $info=$this->session->flashdata('error');
+		if (!empty($info))
+		{
+			echo $info;
+		}
+	?>
 
 
 								<h3 class="header smaller lighter blue">Total Peserta: <?php echo $jumlah;?></h3>

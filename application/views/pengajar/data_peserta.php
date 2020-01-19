@@ -2,13 +2,8 @@
 
 <link rel="stylesheet" href="<?php echo base_url('assets/fontawesome/css/all.css');?>" />
 
-
-
-
-
-
 						<!-- 		<h3 class="header smaller lighter blue">Peserta Yang Telah Verifikasi : <?php var_dump($jumlah);?></h3> -->
-								<div class="container"> 
+<div class="container"> 
  <a href="<?php echo base_url() ?>excel/export"> <i class='fas fa-file-excel ' style='font-size:36px;color:green'></i></a>
 </div>
 								 

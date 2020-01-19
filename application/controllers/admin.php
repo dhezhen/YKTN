@@ -35,23 +35,26 @@ class Admin extends CI_Controller
 			);
 			
 			$this->session->set_userdata($data);
-		$this->session->set_flashdata('succes', "anda berhasil Login");
+		$this->session->set_flashdata('succes',"anda berhasil Login");
 			redirect('admin/beranda');
 
 			//$this->template->admin('admin/beranda');
 		}
 		else
 		{
-			$this->template->home('home/login');
+			//$this->template->home('home/login');
+			$this->load->view("home/login");
 		}
 	}
+	
 	
 
 
 	function logout()
 	{
 		$this->session->sess_destroy();
-		$this->template->home('home/content');
+		//$this->template->home('home/content');
+		$this->load->view("home/login");
 	}
 	
 	function beranda()
